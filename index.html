@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Garcia &amp; Antunes — Advocacia para motoristas e caminhoneiros | Santos/SP</title>
+<meta name="description" content="Escritório de advocacia em Santos/SP dedicado ao motorista desde 2000. Bloqueio em gerenciadora de risco, direitos trabalhistas do caminhoneiro, multas e CNH, INSS e acidentes.">
+<style>
+/* ============ FONTES ============ */
+@font-face{font-family:'DM Serif Display';src:url('assets/fonts/dm-serif-display-latin-400-normal.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'DM Serif Display';src:url('assets/fonts/dm-serif-display-latin-400-italic.woff2') format('woff2');font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:'Montserrat';src:url('assets/fonts/montserrat-latin-400-normal.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Montserrat';src:url('assets/fonts/montserrat-latin-600-normal.woff2') format('woff2');font-weight:600;font-display:swap}
+@font-face{font-family:'Montserrat';src:url('assets/fonts/montserrat-latin-700-normal.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Montserrat';src:url('assets/fonts/montserrat-latin-800-normal.woff2') format('woff2');font-weight:800;font-display:swap}
+
+/* ============ TOKENS ============ */
+:root{
+  --navy:#031933;
+  --navy-2:#06213F;
+  --navy-3:#0A2B4F;
+  --terra:#BE4B22;
+  --terra-bright:#FF8A3D;
+  --cream:#F5EFE5;
+  --cream-dim:rgba(245,239,229,.62);
+  --cream-faint:rgba(245,239,229,.34);
+  --line:rgba(245,239,229,.10);
+  --r:14px;
+  --maxw:1180px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--navy);
+  color:var(--cream);
+  font-family:'Montserrat',system-ui,sans-serif;
+  font-size:16px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+
+/* ============ TIPOGRAFIA ============ */
+h1,h2,h3{font-family:'DM Serif Display',Georgia,serif;font-weight:400;letter-spacing:-.02em;line-height:1.06}
+h1{font-size:clamp(2.3rem,5.2vw,4rem)}
+h2{font-size:clamp(1.9rem,3.6vw,2.9rem)}
+h3{font-size:1.25rem;line-height:1.25}
+em{font-style:italic;color:var(--terra-bright)}
+.kicker{
+  font-family:'Montserrat';font-size:.7rem;font-weight:700;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--terra-bright);
+  display:flex;align-items:center;gap:10px;margin-bottom:18px;
+}
+.kicker::before{content:'';width:26px;height:1px;background:var(--terra)}
+.kicker.center{justify-content:center}
+.lead{color:var(--cream-dim);font-size:1.02rem;max-width:62ch}
+
+/* ============ PADRÃO GEOMÉTRICO (monograma) ============ */
+.motif{position:absolute;pointer-events:none;opacity:.055;color:var(--terra-bright)}
+
+/* ============ BOTÕES ============ */
+.btn{
+  display:inline-flex;align-items:center;gap:12px;
+  background:var(--terra);color:var(--cream);
+  font-weight:700;font-size:.85rem;letter-spacing:.02em;
+  padding:15px 26px;border-radius:100px;border:none;cursor:pointer;
+  transition:.25s ease;
+}
+.btn:hover{background:#D2562A;transform:translateY(-2px);box-shadow:0 12px 30px rgba(190,75,34,.32)}
+.btn .arw{
+  width:24px;height:24px;border-radius:50%;background:rgba(3,25,51,.28);
+  display:grid;place-items:center;font-size:.8rem;line-height:1;
+}
+.btn-ghost{background:transparent;border:1px solid var(--line);color:var(--cream)}
+.btn-ghost:hover{background:rgba(245,239,229,.06);box-shadow:none;border-color:var(--terra)}
+
+/* ============ NAV ============ */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(3,25,51,.72);backdrop-filter:blur(14px);
+  border-bottom:1px solid transparent;transition:.3s;
+}
+header.solid{background:rgba(3,25,51,.96);border-bottom-color:var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:78px}
+.logo{display:flex;align-items:center;gap:12px}
+.logo .mark{width:34px;height:34px;flex:0 0 34px}
+.logo .txt{display:flex;flex-direction:column;line-height:1}
+.logo .txt b{font-family:'DM Serif Display';font-weight:400;font-size:1.02rem;letter-spacing:.01em}
+.logo .txt small{font-size:.52rem;letter-spacing:.34em;text-transform:uppercase;color:var(--cream-faint);margin-top:4px}
+.menu{display:flex;gap:30px;font-size:.82rem;font-weight:600}
+.menu a{color:var(--cream-dim);transition:.2s;position:relative}
+.menu a:hover{color:var(--cream)}
+.menu a::after{content:'';position:absolute;left:0;bottom:-6px;width:0;height:1px;background:var(--terra);transition:.25s}
+.menu a:hover::after{width:100%}
+.nav .btn{padding:11px 20px;font-size:.76rem}
+.burger{display:none;background:none;border:none;color:var(--cream);font-size:1.5rem;cursor:pointer}
+
+/* ============ HERO ============ */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;padding:120px 0 60px}
+.hero-bg{position:absolute;top:0;right:0;bottom:0;left:44%;z-index:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:62% 22%;opacity:.9}
+.hero-bg::after{
+  content:'';position:absolute;inset:0;
+  background:
+    linear-gradient(90deg,var(--navy) 0%,rgba(3,25,51,.88) 16%,rgba(3,25,51,.18) 52%,rgba(3,25,51,.35) 100%),
+    linear-gradient(180deg,rgba(3,25,51,.85) 0%,transparent 22%,rgba(3,25,51,.55) 78%,var(--navy) 100%);
+}
+.hero .wrap{position:relative;z-index:2;width:100%}
+.hero-inner{max-width:660px}
+.hero h1{margin-bottom:24px}
+.hero .lead{font-size:1.06rem;margin-bottom:34px}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:44px}
+.hero-badges{display:flex;gap:34px;flex-wrap:wrap;padding-top:28px;border-top:1px solid var(--line)}
+.hero-badges div b{display:block;font-family:'DM Serif Display';font-size:1.85rem;color:var(--cream)}
+.hero-badges div span{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--cream-faint)}
+.hero .motif{right:-140px;top:50%;transform:translateY(-50%);width:620px;opacity:.07}
+.scroll-hint{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);z-index:2;font-size:.62rem;letter-spacing:.26em;text-transform:uppercase;color:var(--cream-faint);display:flex;flex-direction:column;align-items:center;gap:8px}
+.scroll-hint i{width:1px;height:34px;background:linear-gradient(var(--terra),transparent);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:.3}50%{opacity:1}}
+
+/* ============ SEÇÕES ============ */
+section{position:relative;padding:110px 0}
+.sec-head{margin-bottom:52px;max-width:640px}
+.sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
+.sec-head.center .lead{margin:16px auto 0}
+.alt{background:var(--navy-2)}
+
+/* ============ ÁREAS DE ATUAÇÃO ============ */
+.areas{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.area{
+  background:var(--navy-3);border:1px solid var(--line);border-radius:var(--r);
+  overflow:hidden;transition:.3s;display:flex;flex-direction:column;
+}
+.area:hover{transform:translateY(-6px);border-color:rgba(190,75,34,.55);box-shadow:0 20px 44px rgba(0,0,0,.4)}
+.area .ph{height:172px;position:relative;overflow:hidden;background:var(--navy)}
+.area .ph img{width:100%;height:100%;object-fit:cover;opacity:.72;transition:.5s}
+.area:hover .ph img{transform:scale(1.06);opacity:.9}
+.area .ph::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(3,25,51,.85))}
+.area .body{padding:24px 24px 26px;flex:1;display:flex;flex-direction:column}
+.area h3{margin-bottom:10px}
+.area p{font-size:.86rem;color:var(--cream-dim);flex:1;margin-bottom:18px}
+.area .more{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--terra-bright);display:inline-flex;align-items:center;gap:8px}
+.area .more::after{content:'→';transition:.25s}
+.area:hover .more::after{transform:translateX(5px)}
+.pills{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:38px}
+.pill{
+  border:1px solid var(--line);border-radius:100px;padding:9px 20px;
+  font-size:.76rem;font-weight:600;color:var(--cream-dim);transition:.25s;
+}
+.pill:hover{border-color:var(--terra);color:var(--cream)}
+.sec-cta{text-align:center;margin-top:40px}
+
+/* ============ SOBRE ============ */
+.sobre-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:center}
+.sobre-visual{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.sobre-card{
+  aspect-ratio:3/4;border-radius:var(--r);border:1px solid var(--line);
+  background:var(--navy-3);display:grid;place-items:center;position:relative;overflow:hidden;
+}
+.sobre-card:nth-child(2){margin-top:38px}
+.sobre-card img{width:100%;height:100%;object-fit:cover;opacity:.8}
+.sobre-card.mono{background:linear-gradient(150deg,var(--navy-3),var(--navy))}
+.sobre-card.mono svg{width:62%;opacity:.5;color:var(--terra-bright)}
+.sobre-text p{color:var(--cream-dim);margin-bottom:16px;font-size:.94rem}
+.sobre-text p strong{color:var(--cream);font-weight:600}
+.sig{margin-top:26px;padding-top:22px;border-top:1px solid var(--line)}
+.sig b{font-family:'DM Serif Display';font-size:1.2rem;display:block}
+.sig span{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--cream-faint)}
+
+/* ============ NÚMEROS ============ */
+.nums{
+  border:1px solid var(--line);border-radius:22px;
+  background:linear-gradient(150deg,var(--navy-3),var(--navy-2));
+  display:grid;grid-template-columns:repeat(4,1fr);
+  padding:44px 20px;position:relative;overflow:hidden;
+}
+.nums .motif{left:-60px;top:-90px;width:340px;opacity:.05}
+.num{text-align:center;position:relative;z-index:2;padding:0 14px}
+.num + .num::before{content:'';position:absolute;left:0;top:12%;height:76%;width:1px;background:var(--line)}
+.num b{display:block;font-family:'DM Serif Display';font-size:clamp(2rem,4vw,3rem);color:var(--cream);line-height:1}
+.num b i{font-style:normal;color:var(--terra-bright)}
+.num span{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--cream-faint);margin-top:10px;display:block}
+
+/* ============ DIFERENCIAIS ============ */
+.difs{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.dif{
+  background:rgba(245,239,229,.03);border:1px solid var(--line);
+  border-radius:var(--r);padding:32px 28px;transition:.3s;
+}
+.dif:hover{border-color:rgba(190,75,34,.5);background:rgba(190,75,34,.05)}
+.dif .ico{
+  width:48px;height:48px;border-radius:12px;border:1px solid rgba(190,75,34,.4);
+  display:grid;place-items:center;margin-bottom:20px;color:var(--terra-bright);
+}
+.dif h3{font-size:1.08rem;margin-bottom:10px}
+.dif p{font-size:.85rem;color:var(--cream-dim)}
+
+/* ============ EQUIPE ============ */
+.team{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.member{
+  background:var(--navy-3);border:1px solid var(--line);border-radius:var(--r);
+  overflow:hidden;transition:.3s;
+}
+.member:hover{transform:translateY(-6px);border-color:rgba(190,75,34,.5)}
+.member .ph{aspect-ratio:4/5;overflow:hidden;position:relative;background:linear-gradient(160deg,var(--navy-3),var(--navy))}
+.member .ph img{width:100%;height:100%;object-fit:cover;object-position:center 18%;opacity:.88;transition:.5s}
+.member:hover .ph img{transform:scale(1.05)}
+.member .ph.empty{display:grid;place-items:center}
+.member .ph.empty svg{width:45%;opacity:.28;color:var(--terra-bright)}
+.member .body{padding:22px 24px 26px}
+.member h3{font-size:1.08rem;margin-bottom:4px}
+.member .role{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--terra-bright);margin-bottom:12px}
+.member p{font-size:.82rem;color:var(--cream-dim)}
+
+/* ============ ARTIGOS / BLOG ============ */
+.posts{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.post{
+  background:var(--navy-3);border:1px solid var(--line);border-radius:var(--r);
+  overflow:hidden;transition:.3s;display:flex;flex-direction:column;
+}
+.post:hover{transform:translateY(-6px);border-color:rgba(190,75,34,.5)}
+.post .ph{height:150px;overflow:hidden;position:relative}
+.post .ph img{width:100%;height:100%;object-fit:cover;opacity:.65;transition:.5s}
+.post:hover .ph img{transform:scale(1.06);opacity:.85}
+.post .ph::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(3,25,51,.9))}
+.post .tagline{
+  position:absolute;left:16px;bottom:14px;z-index:2;
+  font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--terra-bright);
+}
+.post .body{padding:22px 22px 24px;flex:1;display:flex;flex-direction:column}
+.post .date{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--cream-faint);margin-bottom:9px}
+.post h3{font-size:1.02rem;margin-bottom:9px}
+.post p{font-size:.83rem;color:var(--cream-dim);flex:1;margin-bottom:16px}
+.post .more{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--terra-bright);display:inline-flex;gap:8px;align-items:center}
+.post .more::after{content:'→';transition:.25s}
+.post:hover .more::after{transform:translateX(5px)}
+
+/* ============ FAIXA CTA ============ */
+.band{
+  background:linear-gradient(120deg,var(--terra) 0%,#8E3416 100%);
+  border-radius:22px;padding:56px 48px;text-align:center;position:relative;overflow:hidden;
+}
+.band .motif{opacity:.10;color:#fff;right:-80px;top:-70px;width:400px}
+.band h2{color:var(--cream);margin-bottom:14px;position:relative;z-index:2}
+.band p{color:rgba(245,239,229,.85);max-width:56ch;margin:0 auto 28px;position:relative;z-index:2;font-size:.95rem}
+.band .btn{background:var(--cream);color:var(--terra);position:relative;z-index:2}
+.band .btn:hover{background:#fff;box-shadow:0 12px 30px rgba(0,0,0,.28)}
+.band .btn .arw{background:rgba(190,75,34,.16)}
+
+/* ============ FAQ ============ */
+.faq{max-width:820px;margin:0 auto}
+.q{border:1px solid var(--line);border-radius:12px;margin-bottom:12px;background:rgba(245,239,229,.03);overflow:hidden;transition:.3s}
+.q.open{border-color:rgba(190,75,34,.5);background:rgba(190,75,34,.06)}
+.q button{
+  width:100%;text-align:left;background:none;border:none;color:var(--cream);
+  font-family:'Montserrat';font-size:.92rem;font-weight:600;cursor:pointer;
+  padding:20px 24px;display:flex;justify-content:space-between;align-items:center;gap:20px;
+}
+.q button i{
+  font-style:normal;color:var(--terra-bright);font-size:1.2rem;
+  transition:.3s;flex:0 0 auto;line-height:1;
+}
+.q.open button i{transform:rotate(45deg)}
+.q .a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.q .a p{padding:0 24px 22px;font-size:.87rem;color:var(--cream-dim)}
+
+/* ============ LOCALIZAÇÃO ============ */
+.loc{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.loc-card{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--navy-3)}
+.loc-card .map{height:210px;background:var(--navy);position:relative;display:grid;place-items:center}
+.loc-card .map svg{width:100%;height:100%;opacity:.35}
+.loc-card .map .pin{position:absolute;color:var(--terra-bright);font-size:1.6rem}
+.loc-card .info{padding:22px 24px}
+.loc-card h3{font-size:1.05rem;margin-bottom:6px}
+.loc-card p{font-size:.84rem;color:var(--cream-dim)}
+.loc-card .tel{margin-top:12px;font-size:.82rem;font-weight:600;color:var(--terra-bright)}
+
+/* ============ FOOTER ============ */
+footer{background:var(--navy-2);border-top:1px solid var(--line);padding:64px 0 0}
+.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:48px}
+.foot h4{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--cream-faint);margin-bottom:18px;font-weight:700}
+.foot ul{list-style:none;display:flex;flex-direction:column;gap:10px;font-size:.85rem;color:var(--cream-dim)}
+.foot ul a:hover{color:var(--terra-bright)}
+.foot .about{font-size:.85rem;color:var(--cream-dim);margin:18px 0 20px;max-width:38ch}
+.socials{display:flex;gap:10px}
+.socials a{width:36px;height:36px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;transition:.25s;color:var(--cream-dim)}
+.socials a:hover{border-color:var(--terra);color:var(--terra-bright)}
+.foot-bar{border-top:1px solid var(--line);padding:22px 0;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.72rem;color:var(--cream-faint)}
+.oab-note{font-size:.68rem;color:var(--cream-faint);max-width:70ch;padding-bottom:22px;line-height:1.7}
+
+/* ============ WHATSAPP FLUTUANTE ============ */
+.wa{
+  position:fixed;right:22px;bottom:22px;z-index:120;
+  width:56px;height:56px;border-radius:50%;background:#25D366;
+  display:grid;place-items:center;box-shadow:0 8px 26px rgba(0,0,0,.4);
+  transition:.25s;
+}
+.wa:hover{transform:scale(1.08)}
+.wa svg{width:28px;height:28px;fill:#fff}
+
+/* ============ REVEAL ============ */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+
+/* ============ RESPONSIVO ============ */
+@media(max-width:980px){
+  .areas,.difs,.team,.posts{grid-template-columns:repeat(2,1fr)}
+  .sobre-grid{grid-template-columns:1fr;gap:38px}
+  .nums{grid-template-columns:repeat(2,1fr);gap:32px 0}
+  .num:nth-child(3)::before{display:none}
+  .loc{grid-template-columns:1fr}
+  .foot{grid-template-columns:1fr 1fr}
+}
+@media(max-width:680px){
+  .menu,.nav .btn{display:none}
+  .burger{display:block}
+  section{padding:76px 0}
+  .areas,.difs,.team,.posts{grid-template-columns:1fr}
+  .hero{min-height:auto;padding:130px 0 70px}
+  .hero-bg{left:0}
+  .hero-bg img{object-position:64% 12%;opacity:.5}
+  .hero-bg::after{background:linear-gradient(180deg,rgba(3,25,51,.72) 0%,rgba(3,25,51,.9) 40%,var(--navy) 78%)}
+  .hero-badges{gap:22px}
+  .band{padding:44px 24px}
+  .foot{grid-template-columns:1fr;gap:32px}
+  .nums{padding:34px 12px}
+  .num::before{display:none!important}
+  .scroll-hint{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<header id="hd">
+  <div class="wrap nav">
+    <a href="#top" class="logo">
+      <svg class="mark" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="5" style="color:var(--terra-bright)">
+        <rect x="8" y="8" width="84" height="84" rx="10"/>
+        <rect x="26" y="26" width="48" height="48" rx="6"/>
+        <path d="M8 50h18M74 50h18"/>
+      </svg>
+      <span class="txt"><b>Garcia &amp; Antunes</b><small>Advogados Associados</small></span>
+    </a>
+    <nav class="menu">
+      <a href="#areas">Áreas de atuação</a>
+      <a href="#sobre">O escritório</a>
+      <a href="#equipe">Equipe</a>
+      <a href="#artigos">Artigos</a>
+      <a href="#faq">Dúvidas</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <a href="#contato" class="btn">Falar com advogado <span class="arw">→</span></a>
+    <button class="burger" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="top">
+  <div class="hero-bg">
+    <img src="assets/fotos/foto_advogado.jpg" alt="Rogério Garcia, advogado responsável">
+  </div>
+  <svg class="motif" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="2.4">
+    <rect x="10" y="10" width="180" height="180" rx="18"/>
+    <rect x="34" y="34" width="132" height="132" rx="14"/>
+    <rect x="58" y="58" width="84" height="84" rx="10"/>
+    <rect x="82" y="82" width="36" height="36" rx="6"/>
+  </svg>
+  <div class="wrap">
+    <div class="hero-inner">
+      <p class="kicker">Santos/SP · Atuação em todo o Brasil</p>
+      <h1>Advocacia especializada em <em>direito do motorista</em></h1>
+      <p class="lead">Desde 2000 ao lado de quem vive na estrada. Bloqueio em gerenciadora de risco, direitos trabalhistas, multas e CNH, afastamento pelo INSS — com atendimento direto e linguagem clara.</p>
+      <div class="hero-cta">
+        <a href="#contato" class="btn">Falar com advogado <span class="arw">→</span></a>
+        <a href="#areas" class="btn btn-ghost">Ver áreas de atuação</a>
+      </div>
+      <div class="hero-badges">
+        <div><b>+20</b><span>Anos de atuação</span></div>
+        <div><b>Motoristas</b><span>Foco de atuação</span></div>
+        <div><b>Santos/SP</b><span>Sede do escritório</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint">Role<i></i></div>
+</section>
+
+<!-- ================= ÁREAS ================= -->
+<section id="areas" class="alt">
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <p class="kicker center">Serviços</p>
+      <h2>Nossas áreas de atuação</h2>
+      <p class="lead">Concentramos a atuação no que o motorista mais precisa — e atendemos o escritório completo nas demais áreas do direito.</p>
+    </div>
+
+    <div class="areas">
+      <article class="area rv">
+        <div class="ph"><img src="assets/fotos/foto1.jpg" alt=""></div>
+        <div class="body">
+          <h3>Bloqueio em gerenciadora de risco</h3>
+          <p>Motorista bloqueado no sistema de gerenciamento de risco fica sem carga e sem renda. Atuamos para desbloquear o cadastro e discutir a reparação pelo período parado.</p>
+          <span class="more">Veja mais sobre</span>
+        </div>
+      </article>
+
+      <article class="area rv">
+        <div class="ph"><img src="assets/fotos/foto_c2.jpg" alt=""></div>
+        <div class="body">
+          <h3>Trabalhista do motorista</h3>
+          <p>Horas extras, tempo de espera, diárias, adicional noturno, verbas rescisórias e vínculo empregatício de motoristas empregados e agregados.</p>
+          <span class="more">Veja mais sobre</span>
+        </div>
+      </article>
+
+      <article class="area rv">
+        <div class="ph"><img src="assets/fotos/foto6.jpg" alt=""></div>
+        <div class="body">
+          <h3>Afastamento e INSS</h3>
+          <p>Auxílio-doença negado, acidente de trabalho, doença ocupacional da estrada e aposentadoria do motorista. Quem parou de rodar não pode ficar sem renda.</p>
+          <span class="more">Veja mais sobre</span>
+        </div>
+      </article>
+
+      <article class="area rv">
+        <div class="ph"><img src="assets/fotos/foto2.jpg" alt=""></div>
+        <div class="body">
+          <h3>Multas, CNH e ANTT</h3>
+          <p>Defesa em autos de infração, recursos de multa, suspensão e cassação da CNH, e regularidade do registro junto à ANTT.</p>
+          <span class="more">Veja mais sobre</span>
+        </div>
+      </article>
+
+      <article class="area rv">
+        <div class="ph"><img src="assets/fotos/foto5_motorista_blur.jpg" alt=""></div>
+        <div class="body">
+          <h3>Acidentes e danos no transporte</h3>
+          <p>Acidentes de trajeto e de trabalho, avaria e roubo de carga, seguro negado e discussão de responsabilidade entre embarcador, transportador e motorista.</p>
+          <span class="more">Veja mais sobre</span>
+        </div>
+      </article>
+
+      <article class="area rv">
+        <div class="ph"><img src="assets/fotos/foto_c5.jpg" alt=""></div>
+        <div class="body">
+          <h3>Contratos e autônomos (TAC)</h3>
+          <p>Análise e elaboração de contratos de transporte, frete e agregamento, além da orientação do transportador autônomo sobre seus direitos e obrigações.</p>
+          <span class="more">Veja mais sobre</span>
+        </div>
+      </article>
+    </div>
+
+    <div class="pills rv">
+      <span class="pill">Direito Trabalhista</span>
+      <span class="pill">Direito Civil</span>
+      <span class="pill">Direito do Consumidor</span>
+      <span class="pill">Direito Previdenciário</span>
+      <span class="pill">Direito Empresarial</span>
+      <span class="pill">Direito de Família</span>
+      <span class="pill">Direito Imobiliário</span>
+      <span class="pill">Direito Contratual</span>
+    </div>
+
+    <div class="sec-cta rv">
+      <a href="#contato" class="btn">Falar com advogado <span class="arw">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SOBRE ================= -->
+<section id="sobre">
+  <div class="wrap">
+    <div class="sobre-grid">
+      <div class="sobre-visual rv">
+        <div class="sobre-card mono">
+          <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="4">
+            <rect x="14" y="14" width="172" height="172" rx="18"/>
+            <rect x="42" y="42" width="116" height="116" rx="12"/>
+            <rect x="70" y="70" width="60" height="60" rx="8"/>
+          </svg>
+        </div>
+        <div class="sobre-card">
+          <img src="assets/fotos/foto_advogado.jpg" alt="Rogério Garcia">
+        </div>
+      </div>
+
+      <div class="sobre-text rv">
+        <p class="kicker">Quem somos</p>
+        <h2>Um escritório que entende a rotina de quem vive na estrada</h2>
+        <p style="margin-top:22px">O <strong>Garcia &amp; Antunes Sociedade de Advogados</strong> atua desde 2000 em Santos/SP, no coração da maior região portuária do país. Essa proximidade com o transporte de cargas moldou a especialidade do escritório.</p>
+        <p>Nosso cliente é o motorista: empregado, agregado ou autônomo. Conhecemos os documentos, os prazos e a linguagem do setor — <strong>e explicamos cada etapa em português claro</strong>, sem juridiquês.</p>
+        <p>Atendimento direto com o advogado responsável pelo caso, do primeiro contato até o desfecho.</p>
+        <div class="sig">
+          <b>Rogério Garcia</b>
+          <span>Sócio fundador · OAB/SP 000.000</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= NÚMEROS ================= -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="nums rv">
+      <svg class="motif" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="3">
+        <rect x="14" y="14" width="172" height="172" rx="18"/><rect x="50" y="50" width="100" height="100" rx="12"/>
+      </svg>
+      <div class="num"><b>+20<i>·</i></b><span>Anos de atuação</span></div>
+      <div class="num"><b>2000</b><span>Ano de fundação</span></div>
+      <div class="num"><b>6</b><span>Frentes de atuação</span></div>
+      <div class="num"><b>BR</b><span>Atendimento nacional</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DIFERENCIAIS ================= -->
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <p class="kicker center">Como trabalhamos</p>
+      <h2>O que diferencia nossa atuação</h2>
+    </div>
+    <div class="difs">
+      <div class="dif rv">
+        <div class="ico">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 17l4-8 4 8M7 9V4M13 20h8M17 4v16M13 8h8"/></svg>
+        </div>
+        <h3>Especialização, não generalismo</h3>
+        <p>Direito do Transporte é o eixo do escritório há mais de duas décadas. Isso encurta o diagnóstico e evita o desgaste de explicar o setor do zero.</p>
+      </div>
+      <div class="dif rv">
+        <div class="ico">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        </div>
+        <h3>Contato direto, sem intermediário</h3>
+        <p>Você fala com o advogado responsável pelo caso. Retorno em horário comercial e atualização sempre que houver movimentação relevante.</p>
+      </div>
+      <div class="dif rv">
+        <div class="ico">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+        </div>
+        <h3>Clareza sobre riscos e prazos</h3>
+        <p>Antes de qualquer medida, você entende o que pode ser buscado, o que é incerto e quanto tempo cada etapa costuma levar. Sem promessa de resultado.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EQUIPE ================= -->
+<section id="equipe">
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <p class="kicker center">Equipe</p>
+      <h2>Conheça nosso corpo jurídico</h2>
+    </div>
+    <div class="team">
+      <article class="member rv">
+        <div class="ph"><img src="assets/fotos/foto_advogado.jpg" alt="Rogério Garcia"></div>
+        <div class="body">
+          <h3>Rogério Garcia</h3>
+          <p class="role">Sócio fundador · OAB/SP 000.000</p>
+          <p>Atuação concentrada em Direito do Transporte e Trabalhista, com foco em motoristas e transportadoras.</p>
+        </div>
+      </article>
+      <article class="member rv">
+        <div class="ph empty">
+          <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="4"><rect x="20" y="20" width="160" height="160" rx="18"/><rect x="52" y="52" width="96" height="96" rx="12"/></svg>
+        </div>
+        <div class="body">
+          <h3>Antunes</h3>
+          <p class="role">Sócio · OAB/SP 000.000</p>
+          <p>Espaço reservado — enviar foto e mini currículo para publicação.</p>
+        </div>
+      </article>
+      <article class="member rv">
+        <div class="ph empty">
+          <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="4"><rect x="20" y="20" width="160" height="160" rx="18"/><rect x="52" y="52" width="96" height="96" rx="12"/></svg>
+        </div>
+        <div class="body">
+          <h3>Advogado(a) associado(a)</h3>
+          <p class="role">Associado · OAB/SP 000.000</p>
+          <p>Espaço reservado — enviar foto e mini currículo para publicação.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ARTIGOS ================= -->
+<section id="artigos" class="alt">
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <p class="kicker center">Conteúdo</p>
+      <h2>Artigos para o motorista</h2>
+      <p class="lead">Conteúdo em linguagem direta sobre os direitos de quem roda. Publicado pelo próprio escritório, sem depender de terceiros.</p>
+    </div>
+    <div class="posts">
+      <article class="post rv">
+        <div class="ph"><img src="assets/fotos/foto1.jpg" alt=""><span class="tagline">Gerenciadora de risco</span></div>
+        <div class="body">
+          <p class="date">12 de julho de 2026</p>
+          <h3>Bloqueado na gerenciadora: o passo a passo pra reverter</h3>
+          <p>O que fazer nas primeiras 48 horas depois de descobrir o bloqueio, quais documentos reunir e quando o caso vai para a Justiça.</p>
+          <span class="more">Ler artigo</span>
+        </div>
+      </article>
+      <article class="post rv">
+        <div class="ph"><img src="assets/fotos/foto_c2.jpg" alt=""><span class="tagline">Trabalhista</span></div>
+        <div class="body">
+          <p class="date">28 de junho de 2026</p>
+          <h3>Tempo de espera conta como jornada? O que diz a Lei do Motorista</h3>
+          <p>A diferença entre tempo de espera, tempo de reserva e hora extra — e como provar cada um deles no processo.</p>
+          <span class="more">Ler artigo</span>
+        </div>
+      </article>
+      <article class="post rv">
+        <div class="ph"><img src="assets/fotos/foto_c5.jpg" alt=""><span class="tagline">Agregado</span></div>
+        <div class="body">
+          <p class="date">15 de junho de 2026</p>
+          <h3>Sou agregado mas trabalho como empregado. E agora?</h3>
+          <p>Os sinais que caracterizam vínculo mesmo com contrato de agregamento assinado, e o que guardar como prova desde já.</p>
+          <span class="more">Ler artigo</span>
+        </div>
+      </article>
+    </div>
+    <div class="sec-cta rv">
+      <a href="#artigos" class="btn btn-ghost">Ver todos os artigos</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAIXA CTA ================= -->
+<section style="padding-top:0" id="contato">
+  <div class="wrap">
+    <div class="band rv">
+      <svg class="motif" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="3">
+        <rect x="14" y="14" width="172" height="172" rx="18"/><rect x="46" y="46" width="108" height="108" rx="12"/><rect x="78" y="78" width="44" height="44" rx="8"/>
+      </svg>
+      <h2>Atendimento jurídico e orientação profissional</h2>
+      <p>Conte o que aconteceu pelo WhatsApp. Analisamos o caso e explicamos os caminhos possíveis antes de qualquer compromisso.</p>
+      <a href="https://wa.me/5513981501270" class="btn" target="_blank" rel="noopener">Falar com advogado <span class="arw">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section id="faq" class="alt">
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <p class="kicker center">Dúvidas</p>
+      <h2>Perguntas frequentes</h2>
+    </div>
+    <div class="faq">
+      <div class="q rv"><button>Fui bloqueado na gerenciadora de risco. O que dá pra fazer? <i>+</i></button>
+        <div class="a"><p>O primeiro passo é identificar a origem do apontamento e qual empresa o inseriu. A partir daí é possível pedir a revisão administrativa e, se necessário, ingressar judicialmente para desbloquear o cadastro e discutir os prejuízos do período parado. Cada caso depende do motivo registrado — por isso a análise da documentação vem antes de qualquer medida.</p></div>
+      </div>
+      <div class="q rv"><button>Sou motorista agregado. Tenho direitos trabalhistas? <i>+</i></button>
+        <div class="a"><p>Depende de como a relação acontece na prática. Elementos como exclusividade, controle de jornada, subordinação a rotas e metas podem caracterizar vínculo mesmo com contrato de agregamento assinado. A avaliação é feita caso a caso, a partir de documentos, rastreamento, conversas e histórico de pagamentos.</p></div>
+      </div>
+      <div class="q rv"><button>O tempo de espera para carga e descarga conta como jornada? <i>+</i></button>
+        <div class="a"><p>A Lei do Motorista trata o tempo de espera de forma específica, com regras próprias de remuneração. É um dos pontos mais discutidos judicialmente no setor. Se você tem registros de espera prolongada, guarde os comprovantes — eles são a base da análise.</p></div>
+      </div>
+      <div class="q rv"><button>O escritório atende fora de Santos? <i>+</i></button>
+        <div class="a"><p>Sim. A sede fica em Santos/SP, mas o atendimento é feito também de forma remota e o escritório acompanha processos em outras comarcas e estados, conforme a necessidade do caso.</p></div>
+      </div>
+      <div class="q rv"><button>Como funciona a primeira conversa? <i>+</i></button>
+        <div class="a"><p>Você envia um resumo do que aconteceu pelo WhatsApp. Pedimos os documentos relevantes, analisamos e retornamos explicando o cenário, os caminhos possíveis e as condições de atuação. Não há cobrança pela análise inicial.</p></div>
+      </div>
+      <div class="q rv"><button>Vocês garantem que eu vou ganhar a causa? <i>+</i></button>
+        <div class="a"><p>Não. Nenhum advogado pode garantir resultado — é vedado pelo Código de Ética da OAB. O que fazemos é apresentar com honestidade as chances, os riscos e os prazos envolvidos, para você decidir com informação.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LOCALIZAÇÃO ================= -->
+<section>
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="kicker">Contato</p>
+      <h2>Nossa localização</h2>
+    </div>
+    <div class="loc">
+      <div class="loc-card rv">
+        <div class="map">
+          <svg viewBox="0 0 400 210" fill="none" stroke="rgba(245,239,229,.28)" stroke-width="1.2">
+            <path d="M0 40h400M0 92h400M0 148h400M60 0v210M150 0v210M248 0v210M330 0v210"/>
+            <rect x="60" y="40" width="90" height="52" fill="rgba(245,239,229,.04)"/>
+            <rect x="248" y="92" width="82" height="56" fill="rgba(245,239,229,.04)"/>
+            <path d="M0 172h400" stroke="rgba(190,75,34,.4)" stroke-width="3"/>
+          </svg>
+          <span class="pin">◉</span>
+        </div>
+        <div class="info">
+          <h3>Escritório em Santos/SP</h3>
+          <p>Rua General Câmara, 141 — Centro<br>Santos/SP · CEP 11010-120</p>
+          <p class="tel">(13) 98150-1270</p>
+        </div>
+      </div>
+      <div class="loc-card rv">
+        <div class="map">
+          <svg viewBox="0 0 400 210" fill="none" stroke="rgba(245,239,229,.28)" stroke-width="1.2">
+            <path d="M0 62h400M0 128h400M92 0v210M198 0v210M296 0v210"/>
+            <rect x="198" y="62" width="98" height="66" fill="rgba(245,239,229,.04)"/>
+            <path d="M0 20c80 40 160 10 240 46s120 20 160 44" stroke="rgba(190,75,34,.4)" stroke-width="3"/>
+          </svg>
+          <span class="pin">◉</span>
+        </div>
+        <div class="info">
+          <h3>Atendimento remoto</h3>
+          <p>Todo o Brasil, por WhatsApp e videochamada.<br>Documentos recebidos digitalmente.</p>
+          <p class="tel">contato@garciaeantunes.adv.br</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a href="#top" class="logo">
+          <svg class="mark" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="5" style="color:var(--terra-bright)">
+            <rect x="8" y="8" width="84" height="84" rx="10"/><rect x="26" y="26" width="48" height="48" rx="6"/><path d="M8 50h18M74 50h18"/>
+          </svg>
+          <span class="txt"><b>Garcia &amp; Antunes</b><small>Advogados Associados</small></span>
+        </a>
+        <p class="about">Sociedade de advogados dedicada ao motorista, sediada em Santos/SP.</p>
+        <div class="socials">
+          <a href="https://instagram.com/garciaeantunes" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://wa.me/5513981501270" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-1.7-.9-2.9-1.6-4-3.6-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5s-.7-1.6-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.4 1.9.8 2.6.9 3.5.8.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.5-.5zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="#areas">Áreas de atuação</a></li>
+          <li><a href="#sobre">O escritório</a></li>
+          <li><a href="#equipe">Equipe</a></li>
+          <li><a href="#artigos">Artigos</a></li>
+          <li><a href="#faq">Dúvidas frequentes</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul>
+          <li>(13) 98150-1270</li>
+          <li>contato@garciaeantunes.adv.br</li>
+          <li>Rua General Câmara, 141<br>Centro · Santos/SP</li>
+          <li>Seg a sex · 9h às 18h</li>
+        </ul>
+      </div>
+    </div>
+    <p class="oab-note">Este site tem caráter meramente informativo, em conformidade com o Código de Ética e Disciplina da OAB e com o Provimento nº 205/2021 do Conselho Federal da OAB. Não constitui oferta de serviços, captação de clientela, promessa de resultado ou mercantilização da advocacia. As informações aqui apresentadas não substituem a consulta a um advogado.</p>
+    <div class="foot-bar">
+      <span>© 2026 Garcia &amp; Antunes Sociedade de Advogados · OAB/SP 000.000</span>
+      <span>Desenvolvido por Propulsão Jurídica</span>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/5513981501270" class="wa" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-1.7-.9-2.9-1.6-4-3.6-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5s-.7-1.6-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.4 1.9.8 2.6.9 3.5.8.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.5-.5zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>
+</a>
+
+<script>
+// nav sólida no scroll
+const hd=document.getElementById('hd');
+addEventListener('scroll',()=>hd.classList.toggle('solid',scrollY>40));
+
+// reveal on scroll
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%3*70)+'ms';io.observe(el)});
+
+// FAQ accordion
+document.querySelectorAll('.q button').forEach(b=>{
+  b.onclick=()=>{
+    const q=b.parentElement, a=q.querySelector('.a'), open=q.classList.contains('open');
+    document.querySelectorAll('.q').forEach(o=>{o.classList.remove('open');o.querySelector('.a').style.maxHeight=null});
+    if(!open){q.classList.add('open');a.style.maxHeight=a.scrollHeight+'px'}
+  };
+});
+</script>
+</body>
+</html>

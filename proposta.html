@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proposta — Site Institucional | Garcia &amp; Antunes</title>
+<style>
+@font-face{font-family:'Montserrat';src:url('assets/fonts/montserrat-latin-400-normal.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Montserrat';src:url('assets/fonts/montserrat-latin-600-normal.woff2') format('woff2');font-weight:600;font-display:swap}
+@font-face{font-family:'Montserrat';src:url('assets/fonts/montserrat-latin-700-normal.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Montserrat';src:url('assets/fonts/montserrat-latin-800-normal.woff2') format('woff2');font-weight:800;font-display:swap}
+@font-face{font-family:'DM Serif Display';src:url('assets/fonts/dm-serif-display-latin-400-normal.woff2') format('woff2');font-weight:400;font-display:swap}
+
+:root{
+  --blue:#024AD6;
+  --blue-dark:#01296F;
+  --orange:#FF7A00;
+  --ink:#2E2E2E;
+  --ink-soft:#6A6A6A;
+  --line:#E4E7EC;
+  --bg:#FFFFFF;
+  --bg-alt:#F5F6F8;
+  --navy:#031933;
+  --terra:#BE4B22;
+  --cream:#F5EFE5;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Montserrat',system-ui,sans-serif;color:var(--ink);background:var(--bg-alt);font-size:15px;line-height:1.62;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:var(--blue)}
+
+.page{
+  max-width:900px;margin:0 auto;background:var(--bg);
+  box-shadow:0 0 60px rgba(0,0,0,.07);
+}
+.pad{padding:64px 72px}
+
+h1,h2{letter-spacing:-.02em;line-height:1.12}
+h1{font-size:2.5rem;font-weight:800}
+h2{font-size:1.6rem;font-weight:800;margin-bottom:10px}
+h3{font-size:1.02rem;font-weight:700;margin-bottom:6px}
+p{margin-bottom:14px;color:var(--ink)}
+.muted{color:var(--ink-soft)}
+.kick{
+  font-size:.66rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--blue);margin-bottom:12px;display:block;
+}
+.sec{border-top:1px solid var(--line)}
+.sec-lead{color:var(--ink-soft);max-width:62ch;margin-bottom:32px}
+
+/* ---------- CAPA ---------- */
+.cover{
+  background:linear-gradient(150deg,var(--blue-dark) 0%,var(--blue) 62%,#0A63F5 100%);
+  color:#fff;padding:60px 72px 64px;position:relative;overflow:hidden;
+}
+.cover::after{
+  content:'';position:absolute;right:-120px;top:-120px;width:420px;height:420px;
+  border:60px solid rgba(255,255,255,.06);border-radius:90px;transform:rotate(18deg);
+}
+.cover img.logo{width:170px;margin-bottom:56px;position:relative;z-index:2}
+.cover .kick{color:rgba(255,255,255,.72)}
+.cover h1{color:#fff;position:relative;z-index:2;max-width:16ch}
+.cover .sub{color:rgba(255,255,255,.82);margin-top:16px;max-width:52ch;position:relative;z-index:2}
+.cover-meta{
+  display:flex;gap:44px;flex-wrap:wrap;margin-top:44px;padding-top:26px;
+  border-top:1px solid rgba(255,255,255,.18);position:relative;z-index:2;
+}
+.cover-meta div span{display:block;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+.cover-meta div b{font-size:.98rem;font-weight:700}
+
+/* ---------- DIAGNÓSTICO ---------- */
+.diag{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:26px}
+.diag-card{border:1px solid var(--line);border-radius:14px;padding:22px 24px;background:var(--bg-alt)}
+.diag-card .n{
+  width:26px;height:26px;border-radius:8px;background:var(--blue);color:#fff;
+  display:grid;place-items:center;font-size:.72rem;font-weight:800;margin-bottom:12px;
+}
+.diag-card p{font-size:.86rem;color:var(--ink-soft);margin:0}
+
+/* ---------- PREVIEW ---------- */
+.preview{background:var(--navy);padding:52px 72px;color:var(--cream)}
+.preview .kick{color:var(--terra)}
+.preview h2{color:var(--cream)}
+.preview p{color:rgba(245,239,229,.7)}
+.shot{
+  border-radius:12px;overflow:hidden;border:1px solid rgba(245,239,229,.14);
+  margin-top:26px;box-shadow:0 26px 60px rgba(0,0,0,.42);
+}
+.shot img{width:100%}
+.preview .btn{margin-top:24px;background:var(--terra);color:var(--cream)}
+
+/* ---------- ESCOPO ---------- */
+.scope{list-style:none;counter-reset:s}
+.scope li{
+  counter-increment:s;display:grid;grid-template-columns:52px 1fr;gap:18px;
+  padding:20px 0;border-bottom:1px dashed var(--line);
+}
+.scope li:last-child{border-bottom:none}
+.scope li::before{
+  content:counter(s,decimal-leading-zero);
+  font-family:'DM Serif Display',serif;font-size:1.5rem;color:var(--blue);line-height:1;
+}
+.scope li p{font-size:.86rem;color:var(--ink-soft);margin:0}
+
+/* ---------- INCLUI / NÃO INCLUI ---------- */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:24px}
+.box{border:1px solid var(--line);border-radius:14px;padding:26px 28px}
+.box.yes{border-color:rgba(2,74,214,.28);background:rgba(2,74,214,.035)}
+.box h3{margin-bottom:16px;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase}
+.box.yes h3{color:var(--blue)}
+.box.no h3{color:var(--ink-soft)}
+.box ul{list-style:none;display:flex;flex-direction:column;gap:11px;font-size:.85rem}
+.box li{display:flex;gap:10px;align-items:flex-start;line-height:1.5}
+.box li i{font-style:normal;flex:0 0 auto;font-weight:800}
+.box.yes li i{color:var(--blue)}
+.box.no li{color:var(--ink-soft)}
+.box.no li i{color:#C4C4C4}
+
+/* ---------- DIFERENCIAIS ---------- */
+.difs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px}
+.dif{border:1px solid var(--line);border-radius:14px;padding:22px 22px 24px}
+.dif .ico{width:36px;height:36px;border-radius:10px;background:rgba(2,74,214,.09);color:var(--blue);display:grid;place-items:center;margin-bottom:14px}
+.dif h3{font-size:.92rem}
+.dif p{font-size:.8rem;color:var(--ink-soft);margin:0}
+
+/* ---------- CRONOGRAMA ---------- */
+.tl{position:relative;margin-top:28px;padding-left:30px}
+.tl::before{content:'';position:absolute;left:6px;top:6px;bottom:16px;width:2px;background:linear-gradient(var(--blue),rgba(2,74,214,.15))}
+.tl-item{position:relative;padding-bottom:26px}
+.tl-item::before{content:'';position:absolute;left:-30px;top:5px;width:14px;height:14px;border-radius:50%;background:#fff;border:3px solid var(--blue)}
+.tl-item .when{font-size:.66rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-bottom:4px}
+.tl-item p{font-size:.85rem;color:var(--ink-soft);margin:0}
+
+/* ---------- INVESTIMENTO ---------- */
+.invest{
+  background:linear-gradient(150deg,var(--blue-dark),var(--blue));color:#fff;
+  border-radius:18px;padding:40px 44px;margin-top:26px;position:relative;overflow:hidden;
+}
+.invest::after{content:'';position:absolute;right:-90px;bottom:-110px;width:300px;height:300px;border:46px solid rgba(255,255,255,.06);border-radius:70px;transform:rotate(22deg)}
+.invest .label{font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.68)}
+.invest .price{font-size:3rem;font-weight:800;letter-spacing:-.03em;line-height:1.1;margin:6px 0 4px;position:relative;z-index:2}
+.invest .price small{font-size:1.1rem;font-weight:600;opacity:.75}
+.invest .cond{color:rgba(255,255,255,.85);font-size:.88rem;position:relative;z-index:2;margin:0}
+.pay{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:28px;position:relative;z-index:2}
+.pay div{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:16px 18px}
+.pay div b{display:block;font-size:.92rem}
+.pay div span{font-size:.76rem;color:rgba(255,255,255,.72)}
+
+.recur{border:1px solid var(--line);border-radius:14px;padding:24px 26px;margin-top:20px;background:var(--bg-alt)}
+.recur h3{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:14px}
+.recur table{width:100%;border-collapse:collapse;font-size:.85rem}
+.recur td{padding:9px 0;border-bottom:1px solid var(--line)}
+.recur tr:last-child td{border-bottom:none}
+.recur td:last-child{text-align:right;font-weight:700}
+.recur .note{font-size:.76rem;color:var(--ink-soft);margin:14px 0 0}
+
+/* ---------- ACEITE ---------- */
+.close{background:var(--navy);color:var(--cream);padding:56px 72px}
+.close h2{color:var(--cream)}
+.close p{color:rgba(245,239,229,.72);max-width:56ch}
+.btn{
+  display:inline-flex;align-items:center;gap:11px;background:var(--blue);color:#fff;
+  font-weight:700;font-size:.86rem;padding:15px 28px;border-radius:100px;text-decoration:none;transition:.25s;
+}
+.btn:hover{filter:brightness(1.1);transform:translateY(-2px)}
+.btn .arw{width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,.22);display:grid;place-items:center;font-size:.76rem}
+.close .btn{background:var(--terra);color:var(--cream);margin-top:22px}
+.valid{margin-top:30px;padding-top:22px;border-top:1px solid rgba(245,239,229,.14);font-size:.76rem;color:rgba(245,239,229,.5)}
+
+footer{padding:26px 72px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.72rem;color:var(--ink-soft);background:#fff;border-top:1px solid var(--line)}
+footer img{width:110px;opacity:.8}
+
+@media(max-width:760px){
+  .pad,.cover,.preview,.close,footer{padding-left:26px;padding-right:26px}
+  .pad{padding-top:46px;padding-bottom:46px}
+  h1{font-size:1.9rem}
+  .diag,.cols,.difs,.pay{grid-template-columns:1fr}
+  .invest{padding:30px 26px}
+  .invest .price{font-size:2.3rem}
+}
+@media print{
+  body{background:#fff}
+  .page{box-shadow:none;max-width:none}
+  .sec{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ============ CAPA ============ -->
+  <section class="cover">
+    <img class="logo" src="proposta-assets/logo-branca-propulsao.png" alt="Propulsão Jurídica">
+    <span class="kick">Proposta comercial · Julho 2026</span>
+    <h1>Site institucional Garcia &amp; Antunes</h1>
+    <p class="sub">Uma página institucional pensada para dar destino ao tráfego pago, transmitir autoridade no direito do motorista e transformar visita em conversa no WhatsApp.</p>
+    <div class="cover-meta">
+      <div><span>Cliente</span><b>Garcia &amp; Antunes Advogados</b></div>
+      <div><span>Responsável</span><b>Rogério Garcia</b></div>
+      <div><span>Agência</span><b>Propulsão Jurídica</b></div>
+      <div><span>Prazo</span><b>12 dias úteis</b></div>
+    </div>
+  </section>
+
+  <!-- ============ DIAGNÓSTICO ============ -->
+  <section class="pad sec">
+    <span class="kick">Por que agora</span>
+    <h2>O tráfego já roda. Falta o lugar pra onde ele leva.</h2>
+    <p class="sec-lead">Hoje o investimento em Meta e Google Ads leva o interessado direto pro WhatsApp. Funciona pra captar, mas deixa duas coisas na mesa: quem ainda está pesquisando não tem onde se convencer, e o Google Ads perde qualidade sem uma página de destino própria.</p>
+    <div class="diag">
+      <div class="diag-card">
+        <div class="n">1</div>
+        <h3>Google Ads precisa de destino próprio</h3>
+        <p>Campanhas de pesquisa que apontam pro WhatsApp têm índice de qualidade menor e CPC mais caro. Uma página própria melhora a nota e derruba o custo por clique.</p>
+      </div>
+      <div class="diag-card">
+        <div class="n">2</div>
+        <h3>Quem pesquisa quer conferir antes</h3>
+        <p>O motorista bloqueado procura o nome do escritório no Google antes de chamar. Sem site, o resultado é só o Instagram com 518 seguidores.</p>
+      </div>
+      <div class="diag-card">
+        <div class="n">3</div>
+        <h3>Autoridade não cabe num anúncio</h3>
+        <p>Mais de 20 anos defendendo motorista é o maior ativo do escritório — e hoje isso não está apresentado em lugar nenhum de forma completa.</p>
+      </div>
+      <div class="diag-card">
+        <div class="n">4</div>
+        <h3>Profissionalismo é o que fecha</h3>
+        <p>Causa trabalhista ou bloqueio de gerenciadora mexe com o sustento da família. O motorista precisa ver um escritório sério antes de entregar o caso — e site próprio, com endereço, OAB e corpo jurídico à mostra, é o que separa o escritório estabelecido do perfil improvisado.</p>
+      </div>
+      <div class="diag-card">
+        <div class="n">5</div>
+        <h3>Leads que não custam clique</h3>
+        <p>Todo lead hoje é pago: parou o anúncio, parou o telefone. Um site otimizado passa a ranquear no Google por conta própria — e cada busca por "advogado motorista bloqueado gerenciadora" que cair no site vira contato sem custo de mídia.</p>
+      </div>
+      <div class="diag-card">
+        <div class="n">6</div>
+        <h3>Rastreamento e remarketing</h3>
+        <p>Com site próprio, dá pra instalar Pixel e tag do Google, medir o que o anúncio realmente gera e remarketar quem visitou sem chamar. Hoje isso se perde.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PREVIEW ============ -->
+  <section class="preview">
+    <span class="kick">Protótipo</span>
+    <h2>Já desenhamos como fica</h2>
+    <p>Não é mockup genérico: é a página real, com a identidade visual que já usamos nos criativos do escritório — azul-marinho, terracota e a tipografia serifada que virou marca do Garcia &amp; Antunes no feed.</p>
+    <div class="shot"><img src="screens/full.jpg" alt="Protótipo do site Garcia &amp; Antunes"></div>
+    <a class="btn" href="index.html" target="_blank">Abrir o protótipo navegável <span class="arw">→</span></a>
+  </section>
+
+  <!-- ============ ESCOPO ============ -->
+  <section class="pad sec">
+    <span class="kick">Escopo</span>
+    <h2>O que entra na página</h2>
+    <p class="sec-lead">Uma página única, com todas as seções necessárias pra apresentar o escritório e converter — sem inflar o projeto com páginas que ninguém acessa.</p>
+    <ol class="scope">
+      <li><div><h3>Abertura com foto e proposta de valor</h3><p>Headline de especialidade, chamada direta pro WhatsApp e os selos de autoridade (anos de atuação, especialidade, sede).</p></div></li>
+      <li><div><h3>Áreas de atuação</h3><p>Seis frentes do direito do motorista com foto e descrição — gerenciadora, trabalhista, multas e CNH, INSS, acidentes e contratos — mais as demais áreas do escritório em destaque secundário.</p></div></li>
+      <li><div><h3>O escritório</h3><p>História desde 2000, o posicionamento em Santos/SP e a forma de atender — com assinatura do sócio responsável.</p></div></li>
+      <li><div><h3>Faixa de números</h3><p>Dados institucionais reais e verificáveis, dentro do que o Provimento 205/2021 da OAB permite divulgar.</p></div></li>
+      <li><div><h3>Diferenciais de atuação</h3><p>Três blocos explicando especialização, contato direto e transparência sobre riscos — sem promessa de resultado.</p></div></li>
+      <li><div><h3>Corpo jurídico</h3><p>Card por advogado com foto, OAB e área de atuação. Estrutura pronta pra crescer conforme o time.</p></div></li>
+      <li><div><h3>Blog de artigos</h3><p>Seção de conteúdo na home com os últimos artigos, listagem completa e página de leitura otimizada para o Google. Cada artigo entra com título, resumo, imagem e endereço próprio — é o que faz o escritório aparecer em busca sem pagar por clique.</p></div></li>
+      <li><div><h3>Perguntas frequentes</h3><p>Seis dúvidas reais do público (bloqueio, agregado, tempo de espera) em formato sanfona — que também é conteúdo indexável pro Google.</p></div></li>
+      <li><div><h3>Localização e contato</h3><p>Endereço em Santos, mapa, telefone, e-mail e horário. Botão flutuante de WhatsApp em toda a navegação.</p></div></li>
+      <li><div><h3>Rodapé institucional e aviso OAB</h3><p>Navegação, redes sociais, dados do escritório e a nota de conformidade com o Código de Ética.</p></div></li>
+    </ol>
+  </section>
+
+  <!-- ============ INCLUI / NÃO INCLUI ============ -->
+  <section class="pad sec">
+    <span class="kick">Condições</span>
+    <h2>O que está e o que não está incluso</h2>
+    <div class="cols">
+      <div class="box yes">
+        <h3>Incluso</h3>
+        <ul>
+          <li><i>✓</i> Design e desenvolvimento da página completa</li>
+          <li><i>✓</i> Versão desktop, tablet e celular</li>
+          <li><i>✓</i> Redação de todos os textos (copy)</li>
+          <li><i>✓</i> Blog: seção na home, listagem e página de artigo</li>
+          <li><i>✓</i> Três artigos iniciais escritos e publicados por nós</li>
+          <li><i>✓</i> Otimização de SEO local (Santos/SP + termos do transporte)</li>
+          <li><i>✓</i> Instalação de Pixel da Meta e tag do Google Ads/Analytics</li>
+          <li><i>✓</i> Botão e links de WhatsApp com rastreamento</li>
+          <li><i>✓</i> Otimização de velocidade (imagens e fontes)</li>
+          <li><i>✓</i> Publicação no ar e configuração do domínio</li>
+          <li><i>✓</i> Revisão de conformidade com o Provimento 205/2021 da OAB</li>
+          <li><i>✓</i> Duas rodadas de ajuste após a entrega</li>
+          <li><i>✓</i> 30 dias de suporte a correções</li>
+        </ul>
+      </div>
+      <div class="box no">
+        <h3>Não incluso</h3>
+        <ul>
+          <li><i>—</i> Registro de domínio e hospedagem (custo do cliente, ver abaixo)</li>
+          <li><i>—</i> Produção de fotos e vídeos do escritório</li>
+          <li><i>—</i> Painel de publicação próprio (CMS) — novos artigos entram via solicitação, ou o painel vira um segundo projeto</li>
+          <li><i>—</i> Redação de artigos além dos três iniciais</li>
+          <li><i>—</i> Sistema de login, agendamento ou portal do cliente</li>
+          <li><i>—</i> Versão em outros idiomas</li>
+          <li><i>—</i> Manutenção mensal após os 30 dias de suporte</li>
+          <li><i>—</i> Gestão de tráfego pago (contrato separado, já em vigor)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DIFERENCIAIS ============ -->
+  <section class="pad sec">
+    <span class="kick">Como fazemos</span>
+    <h2>Três coisas que a maioria não entrega</h2>
+    <div class="difs">
+      <div class="dif">
+        <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Conformidade com a OAB</h3>
+        <p>Cada linha do texto é escrita dentro do Provimento 205/2021: sem promessa de resultado, sem sensacionalismo, sem captação indevida. Site que não gera dor de cabeça na Seccional.</p>
+      </div>
+      <div class="dif">
+        <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M13 2L3 14h8l-1 8 10-12h-8z"/></svg></div>
+        <h3>Rápido, e por isso bem ranqueado</h3>
+        <p>Código próprio, sem construtor pesado. Fontes locais, imagens otimizadas, nada de plugin travando o carregamento. Velocidade é critério de ranqueamento do Google: o mesmo trabalho que sobe a posição na busca orgânica derruba o custo por clique no Ads.</p>
+      </div>
+      <div class="dif">
+        <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/></svg></div>
+        <h3>Integrado ao tráfego</h3>
+        <p>Quem já cuida das campanhas está construindo o site. Pixel, conversões e UTMs saem configurados no dia um, alinhados às campanhas que já rodam.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CRONOGRAMA ============ -->
+  <section class="pad sec">
+    <span class="kick">Prazo</span>
+    <h2>Doze dias úteis, do aceite ao ar</h2>
+    <div class="tl">
+      <div class="tl-item">
+        <div class="when">Dias 1 e 2 · Briefing</div>
+        <h3>Coleta de material</h3>
+        <p>Fotos dos advogados, números de OAB, endereço confirmado, dados dos sócios e definição do domínio.</p>
+      </div>
+      <div class="tl-item">
+        <div class="when">Dias 3 a 6 · Produção</div>
+        <h3>Textos e construção</h3>
+        <p>Redação final de todas as seções, montagem da página e adaptação para celular.</p>
+      </div>
+      <div class="tl-item">
+        <div class="when">Dias 7 e 8 · Conteúdo</div>
+        <h3>Blog e primeiros artigos</h3>
+        <p>Montagem da listagem e da página de artigo, mais a redação dos três textos iniciais otimizados para busca.</p>
+      </div>
+      <div class="tl-item">
+        <div class="when">Dia 9 · Revisão</div>
+        <h3>Apresentação para aprovação</h3>
+        <p>Você navega na versão real e devolve os ajustes de uma vez.</p>
+      </div>
+      <div class="tl-item">
+        <div class="when">Dias 10 e 11 · Ajustes</div>
+        <h3>Correções e rastreamento</h3>
+        <p>Aplicação dos ajustes, instalação de Pixel e tags, testes de velocidade e de WhatsApp.</p>
+      </div>
+      <div class="tl-item">
+        <div class="when">Dia 12 · Publicação</div>
+        <h3>No ar</h3>
+        <p>Domínio apontado, site publicado e campanhas de Google Ads redirecionadas para a nova página.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ INVESTIMENTO ============ -->
+  <section class="pad sec">
+    <span class="kick">Investimento</span>
+    <h2>Valor do projeto</h2>
+    <p class="sec-lead">Pagamento único. Sem mensalidade obrigatória, sem taxa de licença, sem amarra de plataforma — o site é do escritório.</p>
+
+    <div class="invest">
+      <span class="label">Site institucional one-page · entrega completa</span>
+      <div class="price">R$ 2.500<small>,00</small></div>
+      <p class="cond">Projeto fechado, com escopo, prazo e entregáveis definidos nesta proposta.</p>
+      <div class="pay">
+        <div><b>50% + 50%</b><span>Metade no aceite, metade na publicação</span></div>
+        <div><b>Até 3x sem juros</b><span>Somente no cartão de crédito</span></div>
+      </div>
+    </div>
+
+    <div class="recur">
+      <h3>Custos recorrentes (pagos direto pelo escritório)</h3>
+      <table>
+        <tr><td>Registro do domínio <span class="muted">(.adv.br ou .com.br)</span></td><td>~R$ 40/ano</td></tr>
+        <tr><td>Hospedagem <span class="muted">(plano recomendado)</span></td><td>~R$ 25/mês</td></tr>
+      </table>
+      <p class="note">Valores de mercado, contratados no nome do escritório. A Propulsão Jurídica orienta a contratação e faz toda a configuração — sem cobrar nada por isso.</p>
+    </div>
+  </section>
+
+  <!-- ============ ACEITE ============ -->
+  <section class="close">
+    <span class="kick" style="color:var(--terra)">Próximo passo</span>
+    <h2>Aceita e a gente começa</h2>
+    <p>Basta responder confirmando no WhatsApp. Já mando a lista do que preciso do escritório (fotos, OABs, endereço) e o cronograma começa a contar no dia útil seguinte.</p>
+    <a class="btn" href="https://wa.me/5513981501270">Confirmar e começar <span class="arw">→</span></a>
+    <p class="valid">Proposta válida por 15 dias a partir de 23/07/2026. Valores e prazos sujeitos a revisão após esse período.</p>
+  </section>
+
+  <footer>
+    <img src="proposta-assets/logo-azul-cinza-propulsao.png" alt="Propulsão Jurídica">
+    <span>Propulsão Jurídica · Gabriel Sulzbacher · propulsaojuridica.com</span>
+  </footer>
+
+</div>
+</body>
+</html>
