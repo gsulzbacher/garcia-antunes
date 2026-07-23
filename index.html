@@ -59,7 +59,8 @@ em{font-style:italic;color:var(--terra-bright)}
 .lead{color:var(--cream-dim);font-size:1.02rem;max-width:62ch}
 
 /* ============ PADRÃO GEOMÉTRICO (monograma) ============ */
-.motif{position:absolute;pointer-events:none;opacity:.055;color:var(--terra-bright)}
+/* Marca usada como marca-d'água: o próprio monograma GA, não uma forma inventada */
+.motif{position:absolute;pointer-events:none;opacity:.055;color:var(--terra-bright);height:auto}
 
 /* ============ BOTÕES ============ */
 .btn{
@@ -86,7 +87,7 @@ header{
 header.solid{background:rgba(3,25,51,.96);border-bottom-color:var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:78px}
 .logo{display:flex;align-items:center;gap:12px}
-.logo .mark{width:34px;height:34px;flex:0 0 34px}
+.logo .mark{height:30px;width:auto;flex:0 0 auto}
 .logo .txt{display:flex;flex-direction:column;line-height:1}
 .logo .txt b{font-family:'DM Serif Display';font-weight:400;font-size:1.02rem;letter-spacing:.01em}
 .logo .txt small{font-size:.52rem;letter-spacing:.34em;text-transform:uppercase;color:var(--cream-faint);margin-top:4px}
@@ -163,7 +164,7 @@ section{position:relative;padding:110px 0}
 .sobre-card:nth-child(2){margin-top:38px}
 .sobre-card img{width:100%;height:100%;object-fit:cover;opacity:.8}
 .sobre-card.mono{background:linear-gradient(150deg,var(--navy-3),var(--navy))}
-.sobre-card.mono svg{width:62%;opacity:.5;color:var(--terra-bright)}
+.sobre-card.mono img{width:66%;height:auto;object-fit:contain;opacity:.9}
 .sobre-text p{color:var(--cream-dim);margin-bottom:16px;font-size:.94rem}
 .sobre-text p strong{color:var(--cream);font-weight:600}
 .sig{margin-top:26px;padding-top:22px;border-top:1px solid var(--line)}
@@ -209,7 +210,7 @@ section{position:relative;padding:110px 0}
 .member .ph img{width:100%;height:100%;object-fit:cover;object-position:center 18%;opacity:.88;transition:.5s}
 .member:hover .ph img{transform:scale(1.05)}
 .member .ph.empty{display:grid;place-items:center}
-.member .ph.empty svg{width:45%;opacity:.28;color:var(--terra-bright)}
+.member .ph.empty img{width:52%;height:auto;object-fit:contain;opacity:.3;transform:none}
 .member .body{padding:22px 24px 26px}
 .member h3{font-size:1.08rem;margin-bottom:4px}
 .member .role{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--terra-bright);margin-bottom:12px}
@@ -339,11 +340,7 @@ footer{background:var(--navy-2);border-top:1px solid var(--line);padding:64px 0 
 <header id="hd">
   <div class="wrap nav">
     <a href="#top" class="logo">
-      <svg class="mark" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="5" style="color:var(--terra-bright)">
-        <rect x="8" y="8" width="84" height="84" rx="10"/>
-        <rect x="26" y="26" width="48" height="48" rx="6"/>
-        <path d="M8 50h18M74 50h18"/>
-      </svg>
+      <img class="mark" src="assets/marca/ga-monograma.png" alt="Garcia &amp; Antunes">
       <span class="txt"><b>Garcia &amp; Antunes</b><small>Advogados Associados</small></span>
     </a>
     <nav class="menu">
@@ -364,12 +361,7 @@ footer{background:var(--navy-2);border-top:1px solid var(--line);padding:64px 0 
   <div class="hero-bg">
     <img src="assets/fotos/foto_advogado.jpg" alt="Rogério Garcia, advogado responsável">
   </div>
-  <svg class="motif" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="2.4">
-    <rect x="10" y="10" width="180" height="180" rx="18"/>
-    <rect x="34" y="34" width="132" height="132" rx="14"/>
-    <rect x="58" y="58" width="84" height="84" rx="10"/>
-    <rect x="82" y="82" width="36" height="36" rx="6"/>
-  </svg>
+  <img class="motif" src="assets/marca/ga-monograma.png" alt="">
   <div class="wrap">
     <div class="hero-inner">
       <p class="kicker">Santos/SP · Atuação em todo o Brasil</p>
@@ -477,11 +469,7 @@ footer{background:var(--navy-2);border-top:1px solid var(--line);padding:64px 0 
     <div class="sobre-grid">
       <div class="sobre-visual rv">
         <div class="sobre-card mono">
-          <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="4">
-            <rect x="14" y="14" width="172" height="172" rx="18"/>
-            <rect x="42" y="42" width="116" height="116" rx="12"/>
-            <rect x="70" y="70" width="60" height="60" rx="8"/>
-          </svg>
+          <img src="assets/marca/ga-monograma.png" alt="">
         </div>
         <div class="sobre-card">
           <img src="assets/fotos/foto_advogado.jpg" alt="Rogério Garcia">
@@ -507,9 +495,7 @@ footer{background:var(--navy-2);border-top:1px solid var(--line);padding:64px 0 
 <section style="padding-top:0">
   <div class="wrap">
     <div class="nums rv">
-      <svg class="motif" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="3">
-        <rect x="14" y="14" width="172" height="172" rx="18"/><rect x="50" y="50" width="100" height="100" rx="12"/>
-      </svg>
+      <img class="motif" src="assets/marca/ga-monograma.png" alt="">
       <div class="num"><b>+20<i>·</i></b><span>Anos de atuação</span></div>
       <div class="num"><b>2000</b><span>Ano de fundação</span></div>
       <div class="num"><b>6</b><span>Frentes de atuação</span></div>
@@ -569,7 +555,7 @@ footer{background:var(--navy-2);border-top:1px solid var(--line);padding:64px 0 
       </article>
       <article class="member rv">
         <div class="ph empty">
-          <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="4"><rect x="20" y="20" width="160" height="160" rx="18"/><rect x="52" y="52" width="96" height="96" rx="12"/></svg>
+          <img src="assets/marca/ga-monograma.png" alt="">
         </div>
         <div class="body">
           <h3>Antunes</h3>
@@ -579,7 +565,7 @@ footer{background:var(--navy-2);border-top:1px solid var(--line);padding:64px 0 
       </article>
       <article class="member rv">
         <div class="ph empty">
-          <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="4"><rect x="20" y="20" width="160" height="160" rx="18"/><rect x="52" y="52" width="96" height="96" rx="12"/></svg>
+          <img src="assets/marca/ga-monograma.png" alt="">
         </div>
         <div class="body">
           <h3>Advogado(a) associado(a)</h3>
@@ -638,9 +624,7 @@ footer{background:var(--navy-2);border-top:1px solid var(--line);padding:64px 0 
 <section style="padding-top:0" id="contato">
   <div class="wrap">
     <div class="band rv">
-      <svg class="motif" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="3">
-        <rect x="14" y="14" width="172" height="172" rx="18"/><rect x="46" y="46" width="108" height="108" rx="12"/><rect x="78" y="78" width="44" height="44" rx="8"/>
-      </svg>
+      <img class="motif" src="assets/marca/ga-monograma.png" alt="">
       <h2>Atendimento jurídico e orientação profissional</h2>
       <p>Conte o que aconteceu pelo WhatsApp. Analisamos o caso e explicamos os caminhos possíveis antes de qualquer compromisso.</p>
       <a href="https://wa.me/5513981501270" class="btn" target="_blank" rel="noopener">Falar com advogado <span class="arw">→</span></a>
@@ -727,9 +711,7 @@ footer{background:var(--navy-2);border-top:1px solid var(--line);padding:64px 0 
     <div class="foot">
       <div>
         <a href="#top" class="logo">
-          <svg class="mark" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="5" style="color:var(--terra-bright)">
-            <rect x="8" y="8" width="84" height="84" rx="10"/><rect x="26" y="26" width="48" height="48" rx="6"/><path d="M8 50h18M74 50h18"/>
-          </svg>
+          <img class="mark" src="assets/marca/ga-monograma.png" alt="Garcia &amp; Antunes">
           <span class="txt"><b>Garcia &amp; Antunes</b><small>Advogados Associados</small></span>
         </a>
         <p class="about">Sociedade de advogados dedicada ao motorista, sediada em Santos/SP.</p>
