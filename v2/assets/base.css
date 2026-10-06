@@ -1,0 +1,168 @@
+/* ===========================================================
+   Garcia & Antunes — site v2
+   Paleta amostrada do PDF da simulação (valores exatos).
+   Títulos em Lora; a simulação usa DejaVu Serif, que é só o
+   padrão do gerador de PDF, não uma escolha tipográfica.
+   =========================================================== */
+
+@font-face{font-family:'Lora';src:url('fonts/lora-latin-400-normal.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Lora';src:url('fonts/lora-latin-500-normal.woff2') format('woff2');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'Lora';src:url('fonts/lora-latin-600-normal.woff2') format('woff2');font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:'Lora';src:url('fonts/lora-latin-400-italic.woff2') format('woff2');font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:'Montserrat';src:url('fonts/montserrat-latin-400-normal.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Montserrat';src:url('fonts/montserrat-latin-600-normal.woff2') format('woff2');font-weight:600;font-display:swap}
+@font-face{font-family:'Montserrat';src:url('fonts/montserrat-latin-700-normal.woff2') format('woff2');font-weight:700;font-display:swap}
+
+:root{
+  --navy:#061A2B;
+  --navy-2:#0A263B;
+  --navy-3:#0E2F48;
+  --cobre:#C65F31;
+  --cobre-escuro:#B35429;
+  --off:#F7F6F2;
+  --off-2:#F2F0EA;
+  --cinza:#E7EBED;
+  --linha:#CAD1D6;
+  --branco:#FFFFFF;
+
+  --txt-escuro:#061A2B;
+  --txt-medio:#4A5560;
+  --txt-claro:rgba(247,246,242,.78);
+  --txt-fraco:rgba(247,246,242,.52);
+
+  --serif:'Lora',Georgia,'Times New Roman',serif;
+  --sans:'Montserrat',system-ui,-apple-system,sans-serif;
+
+  --maxw:1200px;
+  --gutter:28px;
+  --r:4px;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--off);color:var(--txt-escuro);
+  font-family:var(--sans);font-size:16px;line-height:1.65;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+
+h1,h2,h3,h4{font-family:var(--serif);font-weight:500;line-height:1.15;letter-spacing:-.005em;margin:0}
+h1{font-size:clamp(2.1rem,4.6vw,3.6rem);line-height:1.08}
+h2{font-size:clamp(1.7rem,3.3vw,2.7rem)}
+h3{font-size:1.2rem}
+p{margin:0 0 1.1em}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--gutter)}
+.sec{padding:clamp(64px,8vw,116px) 0;position:relative}
+.sec.escura{background:var(--navy);color:var(--off)}
+.sec.clara{background:var(--off)}
+.sec.clara-2{background:var(--off-2)}
+.sec.branca{background:var(--branco)}
+
+/* chapéu de seção: linha cobre + rótulo */
+.chapeu{
+  display:flex;align-items:center;gap:14px;margin:0 0 20px;
+  font-family:var(--sans);font-size:.7rem;font-weight:700;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--cobre);
+}
+.chapeu::before{content:'';width:42px;height:2px;background:var(--cobre);flex:0 0 auto}
+.chapeu.centro{justify-content:center}
+
+.lead{font-size:1.06rem;line-height:1.7;color:var(--txt-medio);max-width:62ch}
+.escura .lead{color:var(--txt-claro)}
+
+/* ---------- botões ---------- */
+.btn{
+  display:inline-flex;align-items:center;gap:11px;
+  padding:16px 28px;border-radius:var(--r);border:1px solid transparent;
+  font-family:var(--sans);font-size:.78rem;font-weight:700;
+  letter-spacing:.12em;text-transform:uppercase;text-decoration:none;
+  cursor:pointer;transition:.22s ease;
+}
+.btn-cobre{background:var(--cobre);color:var(--branco)}
+.btn-cobre:hover{background:#b35429}
+.btn-linha{background:transparent;border-color:currentColor}
+.escura .btn-linha{color:var(--off)}
+.btn-linha:hover{background:rgba(198,95,49,.12);border-color:var(--cobre);color:var(--cobre)}
+.btn .seta{transition:transform .22s ease}
+.btn:hover .seta{transform:translateX(4px)}
+
+.link-seta{
+  display:inline-flex;align-items:center;gap:9px;text-decoration:none;
+  font-size:.76rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--cobre);border-bottom:1px solid transparent;padding-bottom:3px;transition:.2s;
+}
+.link-seta:hover{border-bottom-color:var(--cobre)}
+
+/* ---------- cabeçalho ---------- */
+.topo{
+  position:fixed;inset:0 0 auto 0;z-index:100;
+  padding:18px 0;transition:.3s ease;
+  background:transparent;
+}
+.topo.fixo{background:rgba(6,26,43,.97);box-shadow:0 1px 0 rgba(247,246,242,.1)}
+.topo .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.marca{display:flex;flex-direction:column;text-decoration:none;color:var(--off);line-height:1.1}
+.marca b{font-family:var(--serif);font-weight:500;font-size:1.22rem;letter-spacing:.01em}
+.marca span{font-size:.56rem;letter-spacing:.24em;text-transform:uppercase;color:var(--txt-fraco);margin-top:3px}
+.menu{display:flex;align-items:center;gap:30px;list-style:none;margin:0;padding:0}
+.menu a{
+  text-decoration:none;color:var(--off);font-size:.8rem;font-weight:600;
+  letter-spacing:.03em;opacity:.86;transition:.2s;
+}
+.menu a:hover{opacity:1;color:var(--cobre)}
+.burger{display:none;background:none;border:0;color:var(--off);cursor:pointer;padding:8px}
+.burger span{display:block;width:22px;height:2px;background:currentColor;margin:4px 0;transition:.25s}
+
+/* ---------- reveal ---------- */
+.rv{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
+
+/* ---------- rodapé ---------- */
+.rodape{background:var(--navy);color:var(--off);padding:72px 0 0}
+.rodape-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:48px;padding-bottom:48px}
+.rodape h4{font-family:var(--sans);font-size:.68rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--cobre);margin:0 0 18px}
+.rodape ul{list-style:none;margin:0;padding:0}
+.rodape li{margin-bottom:11px;font-size:.88rem;color:var(--txt-claro)}
+.rodape li a{text-decoration:none;transition:.2s}
+.rodape li a:hover{color:var(--cobre)}
+.rodape .sobre{font-size:.88rem;color:var(--txt-claro);max-width:38ch;margin:16px 0 0}
+.aviso{
+  border-top:1px solid rgba(247,246,242,.12);padding:26px 0;
+  font-size:.74rem;line-height:1.75;color:var(--txt-fraco);
+}
+.rodape-barra{
+  border-top:1px solid rgba(247,246,242,.12);padding:20px 0 26px;
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  font-size:.74rem;color:var(--txt-fraco);
+}
+
+/* ---------- marcador de pendência ---------- */
+.pendente{
+  display:inline-block;background:rgba(198,95,49,.14);color:var(--cobre);
+  border:1px dashed rgba(198,95,49,.55);border-radius:3px;
+  padding:3px 9px;font-size:.6rem;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;
+}
+
+/* ---------- responsivo ---------- */
+@media(max-width:900px){
+  :root{--gutter:22px}
+  .rodape-grid{grid-template-columns:1fr;gap:36px}
+}
+@media(max-width:820px){
+  .menu{
+    position:fixed;inset:68px 0 auto 0;background:var(--navy);
+    flex-direction:column;align-items:stretch;gap:0;padding:14px 22px 26px;
+    border-top:1px solid rgba(247,246,242,.1);
+    display:none;
+  }
+  .menu.aberto{display:flex}
+  .menu li{border-bottom:1px solid rgba(247,246,242,.07)}
+  .menu a{display:block;padding:15px 0;font-size:.95rem}
+  .burger{display:block}
+  .topo{background:rgba(6,26,43,.97)}
+}
