@@ -256,10 +256,37 @@
 
         <aside class="cartao-contato rv" id="contato">
           <p class="chapeu">Contato</p>
-          <h2>Descreva o seu caso</h2>
+          <h2>Descreva o <em>seu caso</em></h2>
           <p>Conte o que aconteceu e envie os documentos que tiver. O escritório avalia e retorna dizendo se é matéria nossa, quais são os caminhos possíveis e as condições de atuação.</p>
+
           <a href="https://wa.me/5513988275959" class="btn btn-cobre" target="_blank" rel="noopener">Falar pelo WhatsApp <span class="seta">&rarr;</span></a>
-          <a href="#contato" class="btn btn-linha" style="width:100%;justify-content:center">Enviar pelo formulário</a>
+
+          <p class="ou"><span>ou envie pelo formulário</span></p>
+
+          <!-- sem JS o form envia o campo "text" direto pro WhatsApp;
+               com JS, o script monta a mensagem com todos os campos -->
+          <form class="form-wa" id="formContato" action="https://wa.me/5513988275959" method="get" target="_blank">
+            <label for="fNome">Nome</label>
+            <input type="text" id="fNome" name="nome" autocomplete="name" placeholder="Como devemos chamar você" required>
+
+            <label for="fArea">Assunto</label>
+            <select id="fArea" name="area" required>
+              <option value="" selected disabled>Selecione a área</option>
+              <option>Trabalhista</option>
+              <option>Transporte rodoviário de cargas</option>
+              <option>Marítimo, aduaneiro e comércio exterior</option>
+              <option>Cível e contratos</option>
+              <option>Empresarial</option>
+              <option>Criminal</option>
+              <option>Não sei dizer</option>
+            </select>
+
+            <label for="fCaso">O que aconteceu</label>
+            <textarea id="fCaso" name="text" rows="4" placeholder="Descreva o caso em poucas linhas" required></textarea>
+
+            <button type="submit" class="btn btn-linha">Enviar pelo WhatsApp <span class="seta">&rarr;</span></button>
+            <p class="nota-form">O formulário abre o WhatsApp com a mensagem pronta. Nenhum dado fica armazenado neste site.</p>
+          </form>
         </aside>
       </div>
     </div>
@@ -340,6 +367,22 @@
     es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
   },{threshold:.12, rootMargin:'0px 0px -40px 0px'});
   document.querySelectorAll('.rv').forEach(function(e){ io.observe(e); });
+
+  // monta a mensagem do WhatsApp com todos os campos
+  var form=document.getElementById('formContato');
+  if(form){
+    form.addEventListener('submit', function(ev){
+      ev.preventDefault();
+      var nome=form.nome.value.trim(),
+          area=form.area.value,
+          caso=form.text.value.trim();
+      var msg='Olá! Vim pelo site.\n\n'
+            + 'Nome: '+nome+'\n'
+            + 'Assunto: '+area+'\n\n'
+            + caso;
+      window.open('https://wa.me/5513988275959?text='+encodeURIComponent(msg), '_blank', 'noopener');
+    });
+  }
 })();
 </script>
 </body>

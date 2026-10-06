@@ -280,3 +280,44 @@
 /* a linha inteira deixa de ser link; o realce no hover acompanha o botão */
 .area:hover::before{right:0}
 .area:hover .nome{color:var(--cobre)}
+
+/* ---------- formulário que abre o WhatsApp ---------- */
+.cartao-contato .ou{
+  display:flex;align-items:center;gap:14px;
+  margin:26px 0 22px;font-size:.64rem;font-weight:700;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--txt-fraco);
+}
+.cartao-contato .ou::before,.cartao-contato .ou::after{
+  content:'';flex:1;height:1px;background:rgba(247,246,242,.16);
+}
+
+.form-wa{display:flex;flex-direction:column}
+.form-wa label{
+  font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--cobre-claro);margin:0 0 7px;
+}
+.form-wa input,.form-wa select,.form-wa textarea{
+  width:100%;margin:0 0 18px;padding:13px 15px;
+  background:rgba(247,246,242,.06);color:var(--off);
+  border:1px solid rgba(247,246,242,.18);border-radius:var(--r);
+  font-family:var(--sans);font-size:.9rem;line-height:1.55;
+  transition:border-color .22s,background .22s;
+}
+.form-wa textarea{resize:vertical;min-height:96px}
+.form-wa input::placeholder,.form-wa textarea::placeholder{color:rgba(247,246,242,.38)}
+.form-wa input:focus,.form-wa select:focus,.form-wa textarea:focus{
+  outline:none;border-color:var(--cobre);background:rgba(247,246,242,.09);
+}
+/* a seta do select precisa ser desenhada: o nativo some no fundo escuro */
+.form-wa select{
+  appearance:none;-webkit-appearance:none;cursor:pointer;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23E08A5C' stroke-width='1.6'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 15px center;
+  padding-right:40px;
+}
+.form-wa select option{background:var(--navy-2);color:var(--off)}
+.form-wa button{width:100%;justify-content:center;cursor:pointer;margin-top:4px}
+.nota-form{
+  font-size:.72rem;line-height:1.65;color:var(--txt-fraco);
+  margin:16px 0 0;
+}
