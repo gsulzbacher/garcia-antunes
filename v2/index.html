@@ -10,13 +10,14 @@
 <meta name="theme-color" content="#061A2B">
 <link rel="stylesheet" href="assets/base.css">
 <link rel="stylesheet" href="assets/home.css">
+<link rel="stylesheet" href="assets/area.css">
 </head>
 <body>
 
 <header class="topo" id="topo">
   <div class="wrap">
     <!-- Logo provisória em texto: o arquivo que existe é PNG pequeno e sem vetor -->
-    <a href="index.html" class="marca">
+    <a href="#inicio" class="marca">
       <b>Garcia &amp; Antunes</b>
       <span>Sociedade de Advogados</span>
     </a>
@@ -24,7 +25,7 @@
       <ul class="menu" id="menu">
         <li><a href="#areas">Áreas de atuação</a></li>
         <li><a href="#escritorio">O escritório</a></li>
-        <li><a href="profissionais.html">Profissionais</a></li>
+        <li><a href="#profissionais">Profissionais</a></li>
         <li><a href="#conteudo">Conteúdo</a></li>
         <li><a href="#contato">Contato</a></li>
       </ul>
@@ -81,7 +82,7 @@
           <p class="chapeu">Áreas de atuação</p>
           <h2>Seis áreas, uma forma de trabalhar</h2>
         </div>
-        <p class="nota">O modelo completo de cada área foi aprovado em Transporte rodoviário de cargas.</p>
+        <p class="nota">O modelo completo de apresentação de cada área está aplicado abaixo, em Transporte rodoviário de cargas.</p>
       </div>
 
       <div class="areas">
@@ -89,44 +90,84 @@
           <p class="num">01</p>
           <h3>Trabalhista</h3>
           <p>Defesa de empresas e representação de trabalhadores, do início ao fim da execução.</p>
-          <span class="mais">Em breve</span>
+          <span class="mais">Detalhamento em breve</span>
         </article>
 
-        <a class="area escuro rv" href="transporte-rodoviario-de-cargas.html">
+        <a class="area escuro rv" href="#transporte">
           <p class="num">02</p>
           <h3>Transporte rodoviário de cargas</h3>
           <p>Jornada do motorista, frete, bloqueio em gerenciadora de risco e responsabilidade sobre a carga.</p>
-          <span class="mais">Ver a área <span class="seta">&rarr;</span></span>
+          <span class="mais">Ver detalhamento <span class="seta">&darr;</span></span>
         </a>
 
         <article class="area escuro rv" aria-disabled="true">
           <p class="num">03</p>
           <h3>Marítimo, aduaneiro e comércio exterior</h3>
           <p>Importação e exportação, carga retida, perdimento, avarias e demurrage.</p>
-          <span class="mais">Em breve</span>
+          <span class="mais">Detalhamento em breve</span>
         </article>
 
         <article class="area rv" aria-disabled="true">
           <p class="num">04</p>
           <h3>Cível e contratos</h3>
           <p>Contratos, responsabilidade civil, cobrança e execução, inclusive acidentes de trânsito.</p>
-          <span class="mais">Em breve</span>
+          <span class="mais">Detalhamento em breve</span>
         </article>
 
         <article class="area escuro rv" aria-disabled="true">
           <p class="num">05</p>
           <h3>Empresarial</h3>
           <p>Constituição e reorganização societária, contratos e contencioso entre empresas.</p>
-          <span class="mais">Em breve</span>
+          <span class="mais">Detalhamento em breve</span>
         </article>
 
         <article class="area rv" aria-disabled="true">
           <p class="num">06</p>
           <h3>Criminal</h3>
           <p>Defesa em inquérito e em ação penal, acompanhamento de execução e medidas urgentes.</p>
-          <span class="mais">Em breve</span>
+          <span class="mais">Detalhamento em breve</span>
         </article>
       </div>
+    </div>
+  </section>
+
+  <!-- ====== 3b. DETALHE DE ÁREA — modelo das seis, aplicado a Transporte ====== -->
+  <section class="area-abertura" id="transporte">
+    <div class="wrap">
+      <div class="area-abertura-grid">
+        <div>
+          <p class="chapeu">Área de atuação em detalhe</p>
+          <h1 style="font-size:clamp(1.9rem,3.6vw,2.9rem)">Transporte rodoviário de cargas</h1>
+        </div>
+        <p class="area-chamada">A frente em que o escritório mais se especializou, do motorista à transportadora.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="area-corpo">
+    <div class="wrap">
+      <div class="area-corpo-grid">
+        <div class="area-texto rv">
+          <p>O transporte rodoviário reúne num mesmo caso questões trabalhistas, civis e administrativas. O escritório atende transportadoras e embarcadores, na defesa e na estruturação de contratos, e motoristas, quando o problema é bloqueio cadastral ou cobrança indevida do frete.</p>
+          <div class="responsavel">
+            <b>Advogado responsável: a definir</b>
+            <span>A estrutura fica pronta e o nome entra após a definição interna.</span>
+          </div>
+        </div>
+
+        <div class="materias rv">
+          <h2>Matérias frequentes</h2>
+          <ul>
+            <li>Jornada e tempo de espera do motorista.</li>
+            <li>Piso mínimo do frete e prazo de pagamento.</li>
+            <li>Bloqueio em gerenciadora de risco e retirada do apontamento.</li>
+            <li>Descontos sobre o frete e sobre a remuneração.</li>
+            <li>Responsabilidade por avaria, furto e roubo de carga.</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="nota-modelo rv">Este é o modelo de apresentação das seis áreas. As demais recebem o mesmo tratamento assim que os textos e os responsáveis forem definidos.</p>
     </div>
   </section>
 
@@ -178,15 +219,15 @@
     </div>
   </section>
 
-  <!-- ============ 6. SÓCIOS ============ -->
-  <section class="sec escura" id="socios">
+  <!-- ============ 6. PROFISSIONAIS ============ -->
+  <section class="sec escura" id="profissionais">
     <div class="wrap">
       <div class="socios-topo rv">
         <div>
-          <p class="chapeu">Os sócios</p>
+          <p class="chapeu">Profissionais</p>
           <h2>Quem responde pelo escritório</h2>
         </div>
-        <a href="profissionais.html" class="link-seta">Ver todos os profissionais <span class="seta">&rarr;</span></a>
+        <p class="nota" style="color:var(--txt-fraco);max-width:26ch;margin:0">Três sócios e sete advogados. Cada processo tem um responsável designado.</p>
       </div>
 
       <div class="socios">
@@ -215,6 +256,21 @@
           </div>
         </article>
       </div>
+
+      <!-- os sete advogados: só nome e OAB, como o cliente definiu -->
+      <div class="advogados-bloco rv">
+        <h3>Advogados</h3>
+        <ul class="advogados-lista">
+          <li><b>Eriovaldo Montenegro Campos</b><span>OAB/SP 130.156</span></li>
+          <li><b>Henrique R. Colombrini</b><span>OAB/SP 423.521</span></li>
+          <li><b>Julia Barbosa Pereira</b><span>OAB/SP 457.198</span></li>
+          <li><b>Victor Almeida de Oliveira</b><span>OAB/SP 470.089</span></li>
+          <li><b>Matheus Henrique Garcia</b><span>OAB/SP 488.947</span></li>
+          <li><b>Lucas Atanes de Souza Barreto</b><span>OAB/SP 496.527</span></li>
+          <li><b>Vinicius Medeiros de Abreu Ferreira</b><span>OAB/SP 542.025</span></li>
+        </ul>
+        <p class="nota-etapa"><span class="pendente">2ª etapa</span> &nbsp;As fotografias e as biografias completas dos advogados entram depois da padronização dos retratos.</p>
+      </div>
     </div>
   </section>
 
@@ -228,15 +284,15 @@
 
       <div class="conteudo-grid">
         <div class="artigos rv">
-          <a class="artigo" href="#">
+          <a class="artigo" href="#conteudo">
             <div class="meta"><span class="cat">Transporte de cargas</span><span class="data">12/07/2026</span></div>
             <h3>Bloqueio em gerenciadora de risco</h3>
           </a>
-          <a class="artigo" href="#">
+          <a class="artigo" href="#conteudo">
             <div class="meta"><span class="cat">Aduaneiro</span><span class="data">28/06/2026</span></div>
             <h3>Carga retida pela fiscalização</h3>
           </a>
-          <a class="artigo" href="#">
+          <a class="artigo" href="#conteudo">
             <div class="meta"><span class="cat">Trabalhista</span><span class="data">15/06/2026</span></div>
             <h3>Reclamação trabalhista: documentos de defesa</h3>
           </a>
@@ -272,7 +328,7 @@
   <div class="wrap">
     <div class="rodape-grid">
       <div>
-        <a href="index.html" class="marca">
+        <a href="#inicio" class="marca">
           <b>Garcia &amp; Antunes</b>
           <span>Sociedade de Advogados</span>
         </a>
@@ -283,7 +339,7 @@
         <ul>
           <li><a href="#areas">Áreas de atuação</a></li>
           <li><a href="#escritorio">O escritório</a></li>
-          <li><a href="profissionais.html">Profissionais</a></li>
+          <li><a href="#profissionais">Profissionais</a></li>
           <li><a href="#conteudo">Conteúdo</a></li>
         </ul>
       </div>
@@ -312,10 +368,7 @@
 <script>
 (function(){
   var topo=document.getElementById('topo');
-  var alvo=document.querySelector('.abertura');
-  function aoRolar(){
-    topo.classList.toggle('fixo', window.scrollY > 40);
-  }
+  function aoRolar(){ topo.classList.toggle('fixo', window.scrollY > 40); }
   window.addEventListener('scroll', aoRolar, {passive:true}); aoRolar();
 
   var burger=document.getElementById('burger'), menu=document.getElementById('menu');
