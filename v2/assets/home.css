@@ -82,10 +82,10 @@
   content:'';position:absolute;left:0;right:100%;top:0;bottom:0;z-index:-1;
   background:rgba(198,95,49,.07);transition:right .5s cubic-bezier(.2,.7,.3,1);
 }
-a.area:hover{padding-left:22px}
-a.area:hover::before{right:0}
-a.area:hover .nome{color:var(--cobre)}
-a.area:hover .acao .seta{transform:translateY(3px)}
+.area:hover{padding-left:22px}
+
+
+
 .area .acao .seta{transition:transform .28s}
 
 /* ---------- 4. o escritório ---------- */
@@ -189,7 +189,7 @@ a.area:hover .acao .seta{transform:translateY(3px)}
   .area{grid-template-columns:40px 1fr;row-gap:8px;padding:26px 0}
   .area .desc,.area .acao{grid-column:2 / -1}
   .area .acao{margin-top:4px}
-  a.area:hover{padding-left:12px}
+  .area:hover{padding-left:12px}
   .socios{grid-template-columns:1fr;gap:16px}
   .socio .foto{aspect-ratio:4/3}
   .socio .foto img{object-position:50% 20%}
@@ -269,3 +269,14 @@ a.area:hover .acao .seta{transform:translateY(3px)}
 .artigo-aviso p{font-size:.86rem;line-height:1.75;margin:0;color:var(--txt-medio)}
 
 .outros-artigos{background:var(--off-2);padding:clamp(56px,7vw,88px) 0}
+
+/* ---------- botão de WhatsApp por área ---------- */
+.area .acao-wa{
+  text-decoration:none;border:1px solid rgba(198,95,49,.4);border-radius:var(--r);
+  padding:11px 18px;transition:background .25s,border-color .25s,color .25s;
+}
+.area .acao-wa:hover{background:var(--cobre);border-color:var(--cobre);color:var(--branco)}
+.area .acao-wa:hover .seta{transform:translateX(4px)}
+/* a linha inteira deixa de ser link; o realce no hover acompanha o botão */
+.area:hover::before{right:0}
+.area:hover .nome{color:var(--cobre)}
