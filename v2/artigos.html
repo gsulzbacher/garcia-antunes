@@ -9,7 +9,7 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#061A2B">
 <link rel="stylesheet" href="assets/base.css?v=31cbc6d3">
-<link rel="stylesheet" href="assets/home.css?v=230543e1">
+<link rel="stylesheet" href="assets/home.css?v=647ff400">
 </head>
 <body>
 
@@ -47,8 +47,19 @@
 
   <section class="sec clara">
     <div class="wrap">
-      <div class="posts">
-        <article class="post rv rv-1">
+      <!-- a barra nasce oculta: sem JS o visitante continua vendo todos os artigos -->
+      <div class="blog-bar" id="blogBar" hidden>
+        <div class="busca" id="buscaWrap">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+          <label for="buscaInput" class="sr-only">Buscar artigos</label>
+          <input id="buscaInput" type="search" autocomplete="off" placeholder="Buscar por assunto, área ou palavra-chave">
+          <button class="limpar" id="buscaLimpar" type="button" aria-label="Limpar busca">&times;</button>
+        </div>
+        <p class="contador" id="contador" role="status" aria-live="polite"></p>
+      </div>
+
+      <div class="posts" id="listaPosts">
+        <article class="post rv rv-1" data-busca="bloqueio em gerenciadora de risco o que e o apontamento, por que ele trava o motorista e os caminhos administrativos e judiciais para reve-lo. transporte de cargas">
           <a class="post-foto" href="bloqueio-em-gerenciadora-de-risco.html" tabindex="-1" aria-hidden="true">
             <img src="assets/img/artigo-gerenciadora.jpg" alt="Motorista na cabine de um caminhão de carga" loading="lazy" width="900" height="600">
             <span class="post-cat">Transporte de cargas</span>
@@ -61,7 +72,7 @@
           </div>
         </article>
 
-        <article class="post rv rv-2">
+        <article class="post rv rv-2" data-busca="carga retida pela fiscalizacao os motivos mais comuns de retencao, o risco de pena de perdimento e quando cabe mandado de seguranca contra a exigencia. aduaneiro">
           <a class="post-foto" href="carga-retida-pela-fiscalizacao.html" tabindex="-1" aria-hidden="true">
             <img src="assets/img/artigo-carga-retida.jpg" alt="Pátio portuário com contêineres e um caminhão em trânsito" loading="lazy" width="900" height="600">
             <span class="post-cat">Aduaneiro</span>
@@ -74,7 +85,7 @@
           </div>
         </article>
 
-        <article class="post rv rv-3">
+        <article class="post rv rv-3" data-busca="reclamacao trabalhista: documentos de defesa o acervo que a empresa precisa ter organizado antes da citacao, e por que a prova se monta muito antes da audiencia. trabalhista">
           <a class="post-foto" href="reclamacao-trabalhista-documentos-de-defesa.html" tabindex="-1" aria-hidden="true">
             <img src="assets/img/artigo-documentos-defesa.jpg" alt="Dois profissionais analisando documentos sobre a mesa" loading="lazy" width="900" height="600">
             <span class="post-cat">Trabalhista</span>
@@ -87,6 +98,14 @@
           </div>
         </article>
       </div>
+
+      <div class="sem-resultado" id="semResultado" hidden>
+        <b>Nenhum artigo encontrado</b>
+        <span>Não há publicações para esse termo. Tente outra palavra, ou fale com o escritório sobre o seu caso.</span>
+        <button type="button" id="verTodos" class="btn btn-ler">Ver todos os artigos</button>
+      </div>
+
+      <nav class="paginacao" id="paginacao" aria-label="Paginação dos artigos" hidden></nav>
 
       <p class="rv" style="margin:38px 0 0;font-size:.86rem;color:var(--txt-medio)">
         <span class="pendente">2ª etapa</span>
@@ -161,6 +180,109 @@
     es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
   },{threshold:.12, rootMargin:'0px 0px -40px 0px'});
   document.querySelectorAll('.rv').forEach(function(e){ io.observe(e); });
+
+  // ---------- busca e paginação ----------
+  var POR_PAGINA = 6;   // aumentar/reduzir conforme o blog crescer
+
+  var bar   = document.getElementById('blogBar'),
+      wrap  = document.getElementById('buscaWrap'),
+      input = document.getElementById('buscaInput'),
+      limpar= document.getElementById('buscaLimpar'),
+      lista = document.getElementById('listaPosts'),
+      vazio = document.getElementById('semResultado'),
+      verTodos = document.getElementById('verTodos'),
+      nav   = document.getElementById('paginacao'),
+      cont  = document.getElementById('contador'),
+      cards = [].slice.call(lista.querySelectorAll('.post')),
+      pagina = 1, filtrados = cards.slice();
+
+  bar.hidden = false;   // só aparece se o JS rodou
+
+  function normalizar(t){
+    return t.normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase().trim();
+  }
+
+  function filtrar(){
+    var termos = normalizar(input.value).split(/\s+/).filter(Boolean);
+    filtrados = cards.filter(function(c){
+      var alvo = c.getAttribute('data-busca') || '';
+      return termos.every(function(t){ return alvo.indexOf(t) !== -1; });
+    });
+    pagina = 1;
+    wrap.classList.toggle('tem-texto', input.value.length > 0);
+    render();
+  }
+
+  function render(){
+    var total = filtrados.length,
+        paginas = Math.max(1, Math.ceil(total / POR_PAGINA));
+    if (pagina > paginas) pagina = paginas;
+    var ini = (pagina - 1) * POR_PAGINA, fim = ini + POR_PAGINA;
+
+    cards.forEach(function(c){ c.hidden = true; });
+    filtrados.slice(ini, fim).forEach(function(c){
+      c.hidden = false;
+      // o card de uma página que nunca apareceu não passou pelo observer:
+      // sem isso ele volta visível com opacidade 0
+      c.classList.add('in');
+    });
+
+    vazio.hidden = total !== 0;
+    lista.hidden = total === 0;
+
+    cont.textContent = total === 0 ? 'Nenhum resultado'
+      : total === 1 ? '1 artigo'
+      : total + ' artigos' + (paginas > 1 ? ' · página ' + pagina + ' de ' + paginas : '');
+
+    renderPaginacao(paginas);
+  }
+
+  function botao(rotulo, alvo, opts){
+    opts = opts || {};
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.textContent = rotulo;
+    if (opts.atual) b.setAttribute('aria-current','page');
+    if (opts.desabilitado) b.disabled = true;
+    if (opts.rotuloAcessivel) b.setAttribute('aria-label', opts.rotuloAcessivel);
+    if (!opts.atual && !opts.desabilitado){
+      b.addEventListener('click', function(){
+        pagina = alvo; render();
+        lista.scrollIntoView({behavior:'smooth', block:'start'});
+      });
+    }
+    return b;
+  }
+
+  function renderPaginacao(paginas){
+    nav.innerHTML = '';
+    if (paginas < 2){ nav.hidden = true; return; }
+    nav.hidden = false;
+    nav.appendChild(botao('‹', pagina - 1, {desabilitado: pagina === 1, rotuloAcessivel:'Página anterior'}));
+
+    var mostrar = [];
+    for (var i = 1; i <= paginas; i++){
+      if (i === 1 || i === paginas || Math.abs(i - pagina) <= 1) mostrar.push(i);
+      else if (mostrar[mostrar.length-1] !== '...') mostrar.push('...');
+    }
+    mostrar.forEach(function(i){
+      if (i === '...'){
+        var s = document.createElement('span');
+        s.className = 'reticencias'; s.textContent = '…';
+        nav.appendChild(s);
+      } else {
+        nav.appendChild(botao(String(i), i, {atual: i === pagina, rotuloAcessivel:'Página ' + i}));
+      }
+    });
+    nav.appendChild(botao('›', pagina + 1, {desabilitado: pagina === paginas, rotuloAcessivel:'Próxima página'}));
+  }
+
+  input.addEventListener('input', filtrar);
+  limpar.addEventListener('click', function(){ input.value=''; input.focus(); filtrar(); });
+  verTodos.addEventListener('click', function(){ input.value=''; filtrar(); input.focus(); });
+  input.addEventListener('keydown', function(e){ if(e.key==='Escape'){ input.value=''; filtrar(); } });
+
+  render();
 })();
 </script>
 </body>
