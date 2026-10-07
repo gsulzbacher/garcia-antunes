@@ -144,7 +144,6 @@
 .socio .atuacao{font-size:.76rem;line-height:1.5;color:var(--txt-claro);margin:0}
 
 /* ---------- 7. portal de conteúdo ---------- */
-.conteudo-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:clamp(32px,4vw,64px);align-items:start}
 .artigos{display:flex;flex-direction:column}
 .artigo{
   border-top:1px solid var(--linha);padding:30px 0;
@@ -158,10 +157,43 @@
 .artigo:hover{padding-left:16px}
 .artigo:hover h3{color:var(--cobre)}
 
-.cartao-contato{background:var(--navy);color:var(--off);padding:clamp(36px,3.6vw,48px) clamp(30px,3vw,40px)}
-.cartao-contato h2{font-size:clamp(1.6rem,2.3vw,2.1rem);margin-bottom:18px}
-.cartao-contato p{font-size:.92rem;line-height:1.78;color:var(--txt-claro);margin-bottom:30px}
-.cartao-contato .btn{width:100%;justify-content:center;margin-bottom:12px}
+/* ---------- 8. chamada final e contato ---------- */
+.contato{
+  background:var(--navy);color:var(--off);
+  padding:var(--sec-y) 0;position:relative;overflow:hidden;
+}
+.contato::before{content:'';position:absolute;inset:0 0 auto 0;height:3px;background:var(--cobre)}
+/* mancha de cor no canto, pra dobra não ficar um bloco chapado */
+.contato::after{
+  content:'';position:absolute;right:-12%;top:-28%;width:62%;aspect-ratio:1;
+  border-radius:50%;pointer-events:none;
+  background:radial-gradient(circle,rgba(198,95,49,.16) 0%,rgba(198,95,49,0) 68%);
+}
+.contato-grid{
+  position:relative;z-index:1;
+  display:grid;grid-template-columns:1fr minmax(0,460px);
+  gap:clamp(44px,6vw,96px);align-items:start;
+}
+.contato-txt h2{max-width:13ch;margin-bottom:22px}
+.contato-txt .lead{max-width:44ch;margin-bottom:clamp(34px,4vw,46px)}
+
+.contato-dados{list-style:none;margin:0;padding:0;border-top:1px solid rgba(247,246,242,.14)}
+.contato-dados li{
+  padding:17px 0;border-bottom:1px solid rgba(247,246,242,.14);
+  display:grid;grid-template-columns:132px minmax(0,1fr);gap:18px;align-items:baseline;
+  font-size:.92rem;line-height:1.6;color:var(--txt-claro);
+}
+.contato-dados li>span:first-child{
+  font-size:.6rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--cobre-claro);
+}
+.contato-dados a{text-decoration:none;transition:.22s}
+.contato-dados a:hover{color:var(--cobre-claro)}
+
+.contato-form{
+  background:var(--navy-2);border:1px solid rgba(247,246,242,.1);
+  border-radius:var(--r);padding:clamp(28px,3vw,40px);
+}
 
 /* ---------- 8. chamada final ---------- */
 .chamada{background:var(--cobre);color:var(--branco);text-align:center;overflow:hidden;position:relative}
@@ -177,11 +209,15 @@
 @media(max-width:1060px){
   .area{grid-template-columns:48px minmax(0,1fr) auto;row-gap:10px}
   .area .desc{grid-column:2 / -1}
-  .conteudo-grid{grid-template-columns:1fr}
   .compromissos{grid-template-columns:1fr;gap:26px}
+}
+@media(max-width:980px){
+  .contato-grid{grid-template-columns:1fr;gap:44px}
+  .contato-txt h2,.contato-txt .lead{max-width:none}
 }
 @media(max-width:820px){
   .abertura{min-height:0}
+  .contato-dados li{grid-template-columns:1fr;gap:4px}
   .abertura-conteudo{padding-top:126px;padding-bottom:64px}
   .abertura h1{max-width:none}
   .abertura-fundo img{object-position:56% 40%}
@@ -282,15 +318,6 @@
 .area:hover .nome{color:var(--cobre)}
 
 /* ---------- formulário que abre o WhatsApp ---------- */
-.cartao-contato .ou{
-  display:flex;align-items:center;gap:14px;
-  margin:26px 0 22px;font-size:.64rem;font-weight:700;
-  letter-spacing:.18em;text-transform:uppercase;color:var(--txt-fraco);
-}
-.cartao-contato .ou::before,.cartao-contato .ou::after{
-  content:'';flex:1;height:1px;background:rgba(247,246,242,.16);
-}
-
 .form-wa{display:flex;flex-direction:column}
 .form-wa label{
   font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;

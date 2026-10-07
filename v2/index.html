@@ -9,7 +9,7 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#061A2B">
 <link rel="stylesheet" href="assets/base.css?v=31cbc6d3">
-<link rel="stylesheet" href="assets/home.css?v=767d9d17">
+<link rel="stylesheet" href="assets/home.css?v=d9813ed1">
 <link rel="stylesheet" href="assets/area.css?v=71e7c10a">
 </head>
 <body>
@@ -238,8 +238,7 @@
         <a href="artigos.html" class="link-seta">Ver todos os artigos <span class="seta">&rarr;</span></a>
       </div>
 
-      <div class="conteudo-grid">
-        <div class="artigos rv">
+      <div class="artigos rv">
           <a class="artigo" href="bloqueio-em-gerenciadora-de-risco.html">
             <div class="meta"><span class="cat">Transporte de cargas</span><span class="data">12/07/2026</span></div>
             <h3>Bloqueio em gerenciadora de risco</h3>
@@ -253,16 +252,29 @@
             <h3>Reclamação trabalhista: documentos de defesa</h3>
           </a>
         </div>
+    </div>
+  </section>
 
-        <aside class="cartao-contato rv" id="contato">
+  <!-- ============ 8. CHAMADA FINAL E CONTATO ============ -->
+  <section class="contato escura" id="contato">
+    <div class="wrap">
+      <div class="contato-grid">
+
+        <div class="contato-txt rv">
           <p class="chapeu">Contato</p>
           <h2>Descreva o <em>seu caso</em></h2>
-          <p>Conte o que aconteceu e envie os documentos que tiver. O escritório avalia e retorna dizendo se é matéria nossa, quais são os caminhos possíveis e as condições de atuação.</p>
+          <p class="lead">Conte o que aconteceu e envie os documentos que tiver. O escritório avalia e retorna dizendo se é matéria nossa, quais são os caminhos possíveis e as condições de atuação.</p>
 
+          <ul class="contato-dados">
+            <li><span>Telefone</span><a href="tel:+551332243357">(13) 3224-3357</a></li>
+            <li><span>WhatsApp</span><a href="https://wa.me/5513988275959" target="_blank" rel="noopener">(13) 98827-5959</a></li>
+            <li><span>Endereço</span>Rua General Câmara, 141, sala 73<br>Edifício Comércio Exterior · Centro · Santos/SP</li>
+            <li><span>Atendimento</span>Segunda a sexta, das 9h às 18h <span class="pendente">confirmar</span></li>
+          </ul>
+        </div>
 
-          <!-- sem JS o form envia o campo "text" direto pro WhatsApp;
-               com JS, o script monta a mensagem com todos os campos -->
-          <form class="form-wa" id="formContato" action="https://wa.me/5513988275959" method="get" target="_blank">
+        <div class="contato-form rv">
+<form class="form-wa" id="formContato" action="https://wa.me/5513988275959" method="get" target="_blank">
             <label for="fNome">Nome</label>
             <input type="text" id="fNome" name="nome" autocomplete="name" placeholder="Como devemos chamar você" required>
 
@@ -284,19 +296,8 @@
             <button type="submit" class="btn btn-cobre">Enviar pelo WhatsApp <span class="seta">&rarr;</span></button>
             <p class="nota-form">O formulário abre o WhatsApp com a mensagem pronta. Nenhum dado fica armazenado neste site.</p>
           </form>
-        </aside>
-      </div>
-    </div>
-  </section>
+        </div>
 
-  <!-- ============ 8. CHAMADA FINAL ============ -->
-  <section class="sec chamada">
-    <div class="wrap">
-      <h2 class="rv">Descreva o seu caso</h2>
-      <p class="rv">O escritório avalia e retorna dizendo se é matéria nossa, quais são os caminhos possíveis e as condições de atuação.</p>
-      <div class="chamada-botoes rv">
-        <a href="https://wa.me/5513988275959" class="btn btn-cobre" target="_blank" rel="noopener">Falar pelo WhatsApp <span class="seta">&rarr;</span></a>
-        <a href="#contato" class="btn btn-linha">Enviar pelo formulário</a>
       </div>
     </div>
   </section>
