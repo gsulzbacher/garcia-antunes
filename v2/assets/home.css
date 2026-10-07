@@ -144,18 +144,47 @@
 .socio .atuacao{font-size:.76rem;line-height:1.5;color:var(--txt-claro);margin:0}
 
 /* ---------- 7. portal de conteúdo ---------- */
-.artigos{display:flex;flex-direction:column}
-.artigo{
-  border-top:1px solid var(--linha);padding:30px 0;
-  text-decoration:none;color:inherit;display:block;position:relative;transition:.3s;
+.posts{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(22px,2.4vw,34px)}
+.post{
+  display:flex;flex-direction:column;background:var(--branco);
+  border:1px solid var(--linha);border-radius:var(--r);overflow:hidden;
+  transition:border-color .3s,transform .3s,box-shadow .3s;
 }
-.artigo:last-child{border-bottom:1px solid var(--linha)}
-.artigo .meta{display:flex;gap:20px;align-items:center;margin-bottom:12px}
-.artigo .cat{font-size:.62rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--cobre)}
-.artigo .data{font-size:.74rem;color:var(--txt-medio)}
-.artigo h3{font-size:clamp(1.18rem,1.6vw,1.44rem);line-height:1.3;margin:0;transition:.3s;max-width:30ch}
-.artigo:hover{padding-left:16px}
-.artigo:hover h3{color:var(--cobre)}
+.post:hover{border-color:rgba(198,95,49,.45);transform:translateY(-4px);box-shadow:0 18px 40px -22px rgba(6,26,43,.3)}
+
+.post-foto{position:relative;display:block;aspect-ratio:3/2;overflow:hidden;background:var(--navy)}
+.post-foto img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.7,.3,1)}
+.post:hover .post-foto img{transform:scale(1.045)}
+.post-cat{
+  position:absolute;left:0;bottom:0;background:var(--cobre);color:var(--branco);
+  padding:7px 13px;font-size:.58rem;font-weight:700;
+  letter-spacing:.17em;text-transform:uppercase;
+}
+
+.post-corpo{display:flex;flex-direction:column;flex:1;padding:clamp(22px,2vw,28px)}
+.post-corpo time{
+  font-size:.66rem;font-weight:700;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--txt-medio);
+}
+.post-corpo h3{margin:11px 0 12px;font-size:clamp(1.14rem,1.4vw,1.3rem);line-height:1.3;text-wrap:balance}
+.post-corpo h3 a{text-decoration:none;color:inherit;transition:color .25s}
+.post:hover .post-corpo h3 a{color:var(--cobre)}
+/* o link do título cobre o card inteiro: a foto e o botão não precisam repetir o alvo */
+.post-corpo h3 a::after{content:'';position:absolute;inset:0}
+.post{position:relative}
+.post-corpo p{
+  font-size:.9rem;line-height:1.72;color:var(--txt-medio);
+  margin:0 0 clamp(20px,2vw,26px);
+}
+
+.btn-ler{
+  align-self:flex-start;margin-top:auto;
+  position:relative;z-index:1;
+  padding:12px 20px;font-size:.66rem;
+  border-color:var(--linha);color:var(--txt-escuro);background:transparent;
+}
+.post:hover .btn-ler{background:var(--cobre);border-color:var(--cobre);color:var(--branco)}
+.post:hover .btn-ler .seta{transform:translateX(5px)}
 
 /* ---------- 8. chamada final e contato ---------- */
 .contato{
@@ -210,6 +239,7 @@
   .area{grid-template-columns:48px minmax(0,1fr) auto;row-gap:10px}
   .area .desc{grid-column:2 / -1}
   .compromissos{grid-template-columns:1fr;gap:26px}
+  .posts{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:980px){
   .contato-grid{grid-template-columns:1fr;gap:44px}
@@ -229,6 +259,7 @@
   .socios{grid-template-columns:1fr;gap:16px}
   .socio .foto{aspect-ratio:4/3}
   .socio .foto img{object-position:50% 20%}
+  .posts{grid-template-columns:1fr}
   .faixa-dados p{flex-direction:column;gap:9px}
   .faixa-dados .sep{display:none}
 }
@@ -247,28 +278,6 @@
 }
 .migalha a{color:var(--cobre-claro);text-decoration:none}
 .migalha a:hover{text-decoration:underline}
-
-.lista-artigos{display:flex;flex-direction:column;border-top:1px solid var(--linha)}
-.lista-artigos .artigo{
-  border-top:0;border-bottom:1px solid var(--linha);
-  padding:clamp(28px,3vw,40px) 0;
-  display:grid;grid-template-columns:150px minmax(0,1fr) auto;
-  align-items:baseline;gap:clamp(18px,3vw,44px);
-}
-.lista-artigos .artigo .meta{display:block;margin:0}
-.lista-artigos .artigo .cat{display:block;margin-bottom:6px}
-.lista-artigos .artigo h3{max-width:34ch}
-.lista-artigos .artigo .ler{
-  font-size:.64rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
-  color:var(--cobre);display:inline-flex;align-items:center;gap:10px;white-space:nowrap;
-}
-.lista-artigos .artigo .ler .seta{transition:transform .28s}
-.lista-artigos .artigo:hover .ler .seta{transform:translateX(5px)}
-
-@media(max-width:860px){
-  .lista-artigos .artigo{grid-template-columns:1fr;row-gap:10px}
-  .lista-artigos .artigo h3{max-width:none}
-}
 
 /* ---------- artigo ---------- */
 .artigo-abertura{
