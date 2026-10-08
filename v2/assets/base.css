@@ -19,6 +19,8 @@
   --navy-3:#0E3150;
   --cobre:#C65F31;
   --cobre-claro:#E08A5C;
+  /* o cobre do PDF dá 3.6:1 no fundo claro: insuficiente para rótulo de 10px */
+  --cobre-escuro:#A94F27;
   --off:#F7F6F2;
   --off-2:#F2F0EA;
   --cinza:#E7EBED;

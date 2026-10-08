@@ -76,7 +76,6 @@
   font-size:.64rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
   color:var(--cobre);display:inline-flex;align-items:center;gap:10px;white-space:nowrap;
 }
-.area[aria-disabled="true"] .acao{color:var(--txt-medio);opacity:.55}
 /* faixa cobre que entra por baixo no hover */
 .area::before{
   content:'';position:absolute;left:0;right:100%;top:0;bottom:0;z-index:-1;
@@ -317,10 +316,13 @@
 
 /* ---------- botão de WhatsApp por área ---------- */
 .area .acao-wa{
-  text-decoration:none;border:1px solid rgba(198,95,49,.4);border-radius:var(--r);
-  padding:11px 18px;transition:background .25s,border-color .25s,color .25s;
+  text-decoration:none;color:var(--cobre-escuro);
+  border:1px solid rgba(198,95,49,.55);border-radius:var(--r);
+  background:rgba(198,95,49,.06);
+  font-size:.68rem;padding:12px 19px;
+  transition:background .25s,border-color .25s,color .25s;
 }
-.area .acao-wa:hover{background:var(--cobre);border-color:var(--cobre);color:var(--branco)}
+.area .acao-wa:hover{background:var(--cobre-escuro);border-color:var(--cobre-escuro);color:var(--branco)}
 .area .acao-wa:hover .seta{transform:translateX(4px)}
 /* a linha inteira deixa de ser link; o realce no hover acompanha o botão */
 .area:hover::before{right:0}
