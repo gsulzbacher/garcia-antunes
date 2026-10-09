@@ -91,8 +91,11 @@
 .escritorio-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(40px,6vw,92px);align-items:center}
 .escritorio-foto{position:relative}
 .escritorio-foto img{
-  width:100%;aspect-ratio:4/5;object-fit:cover;
-  filter:grayscale(.3) contrast(1.04) brightness(.95);
+  /* height:auto é obrigatório: os atributos width/height do <img> viram
+     hint de apresentação e anulam o aspect-ratio se a altura não for auto */
+  width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;
+  /* leve, só pra casar com a paleta: a abertura usa a MESMA foto, lá sim bem escurecida */
+  filter:grayscale(.12) contrast(1.05);
 }
 .escritorio-legenda{background:var(--navy);color:var(--off);padding:30px 32px}
 .escritorio-legenda b{font-family:var(--serif);font-weight:500;font-size:1.42rem;display:block;margin-bottom:9px}
