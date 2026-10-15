@@ -169,13 +169,6 @@ h1 em,h2 em,h3 em{font-style:normal;color:var(--cobre)}
   font-size:.72rem;color:var(--txt-fraco);
 }
 
-/* ---------- marcador de pendência ---------- */
-.pendente{
-  display:inline-block;background:rgba(198,95,49,.13);color:var(--cobre);
-  border:1px dashed rgba(198,95,49,.5);border-radius:2px;
-  padding:3px 9px;font-size:.58rem;font-weight:700;
-  letter-spacing:.16em;text-transform:uppercase;vertical-align:middle;
-}
 
 /* ---------- responsivo ---------- */
 @media(max-width:1000px){
